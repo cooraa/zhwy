@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>底部导航</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <script type="text/javascript" src="script/rem.js"></script>
+</head>
+<body>
+    <div id="wrap" class="flex-wrap flex-vertical">
+        <header>
+            <div class="nav active">
+                <header class="aui-bar aui-bar-nav aui-bar-light">
+                    <div class="aui-pull-left aui-btn">
+                        <embed src="./image/home/code.svg" width="24" height="24" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                    </div>
+                    <div class="aui-title" onclick="openMyHouse()">
+                        <span>上海金城小区</span>
+                        <i class="aui-iconfont aui-icon-down"></i>
+                    </div>
+                    <div class="aui-pull-right aui-btn">
+                        <embed src="./image/home/message.svg" width="24" height="24" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                    </div>
+                </header>
+            </div>
+            <div class="nav">
+                <!-- 市集 -->
+                <header class="aui-bar aui-bar-nav">
+                    <div class="aui-title" style="left:0.5rem; right: 2rem;">
+                        <div class="aui-searchbar">
+                            <div class="aui-searchbar-input aui-border-radius">
+                                <i class="aui-iconfont aui-icon-search"></i>
+                                <input type="search" placeholder="请输入搜索内容" id="search-input">
+                                <div class="voice">
+                                    <embed src="./image/market/voice.svg" width="16" height="16" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                                </div>
+                                <div class="aui-searchbar-clear-btn">
+                                    <i class="aui-iconfont aui-icon-close"></i>
+                                </div>
+                            </div>
+                            <div class="aui-searchbar-btn" tapmode>取消</div>
+                        </div>
+                    </div>
+                    <div class="aui-pull-right aui-btn">
+                        <span class="aui-iconfont aui-icon-cart" id="cart"></span>
+                    </div>
+                </header>
+            </div>
+            <div class="nav">
+                <!-- 管家 -->
+                <header class="aui-bar aui-bar-nav aui-bar-light">
+                    <div class="aui-pull-left aui-btn">
+                      <embed src="./image/home/code.svg" width="24" height="24" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                    </div>
+                    <div class="aui-title">
+                        <span>亚太广场</span>
+                        <i class="aui-iconfont aui-icon-down"></i>
+                    </div>
+                    <div class="aui-pull-right aui-btn"  onclick='stewardlist()'>
+                        <embed src="./image/housekeeper/housekeeperList.svg" width="24" height="24" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                    </div>
+                </header>
+            </div>
+            <div class="nav">
+              <header class="aui-bar aui-bar-nav aui-bar-light">
+                  <div class="aui-title" >
+                      <span>亚太广场</span>
+                      <i class="aui-iconfont aui-icon-down"></i>
+                  </div>
+                  <div  class="aui-pull-right aui-btn"  >
+                      <embed src="./image/home/message.svg" width="24" height="24" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                  </div>
+              </header>
+            </div>
+            <div class="nav">
+                <!-- 我的 -->
+            </div>
+        </header>
+        <div id="main" class="flex-con">
+
+        </div>
+        <div id="footer" class="border-t">
+            <ul class="flex-wrap">
+                <li tapmode="hover" onclick="randomSwitchBtn( this );" class="flex-con active">首页</li>
+                <li tapmode="hover" onclick="randomSwitchBtn( this );" class="flex-con">市集</li>
+                <li tapmode="hover" onclick="randomSwitchBtn( this );" class="flex-con"></li>
+                <li tapmode="hover" onclick="randomSwitchBtn( this );" class="flex-con">社区</li>
+                <li tapmode="hover" onclick="randomSwitchBtn( this );" class="flex-con">我的</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="script/api.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script type="text/javascript" src="script/apiConfig.js"></script>
+<script type="text/javascript" src="script/index.js"></script>
+<script type="text/javascript">
+</script>
