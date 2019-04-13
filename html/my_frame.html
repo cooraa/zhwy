@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" href="../css/aui.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/my/my_frame.css">
+    <script src='../script/rem.js'></script>
+    <script src='../script/vue.js'></script>
+</head>
+
+<body>
+    <!-- <div class="loginBtn" onclick="openWelcome()">欢迎页</div>
+    <div class="loginBtn" onclick="openLogin()">登录页</div>
+    <div class="loginBtn" onclick="openRegister()">注册页</div>
+    <div class="loginBtn" onclick="openUpdatePassword()">修改密码页</div> -->
+    <div class='header_img'>
+        <p onclick="openMyinformation()"><img src="../image/my/portrait.png" alt=""></p>
+    </div>
+    <div class='username'>
+        云社大拿<span>LV7</span>
+    </div>
+    <div class='site'>
+        房屋地址上海市南京路876弄字符限制最后
+    </div>
+    <div class='attention_box'>
+        <div class='attention'>
+            <h1>8365</h1>
+            <p>关注</p>
+        </div>
+        <div class='vermicelli'>
+            <h1>8237</h1>
+            <p>粉丝</p>
+        </div>
+        <div class='enshrine'>
+            <h1>8370</h1>
+            <p>收藏</p>
+        </div>
+    </div>
+    <div class='modules'>
+        <div>
+            <p><img src="../image/my/notecase.png" alt=""></p>
+            <h1>我的钱包</h1>
+        </div>
+        <div>
+            <p><img src="../image/my/voiture.png" alt=""></p>
+            <h1>我的车辆</h1>
+        </div>
+        <div>
+            <p><img src="../image/my/house.png" alt=""></p>
+            <h1>我的房屋</h1>
+        </div>
+        <div>
+            <p><img src="../image/my/member.png" alt=""></p>
+            <h1>会员中心</h1>
+        </div>
+    </div>
+    <div class='My_message'>
+        <div class='message_list'>
+            <div>
+                <h1>优惠卷</h1>
+                <h2>
+               <span>17</span>
+               张
+             </h2>
+                <p><img src="../image/my/lucency.png" alt=""></p>
+            </div>
+            <div>
+                <h1>物业缴费</h1>
+                <h2>
+               <span>4</span>
+               笔
+             </h2>
+                <p><img src="../image/my/lucency.png" alt=""></p>
+            </div>
+            <div>
+                <h1>生活缴费</h1>
+                <h2>
+               <span>9</span>
+               笔
+             </h2>
+                <p><img src="../image/my/lucency.png" alt=""></p>
+            </div>
+            <div>
+                <h1>参与话</h1>
+                <h2>
+               <span>6</span>
+               个
+             </h2>
+                <p><img src="../image/my/lucency.png" alt=""></p>
+            </div>
+        </div>
+    </div>
+    <div class='gaine'>
+        <div class='gaine_list'>
+            <h1>市集订单</h1>
+            <p><img src="../image/ren.png" alt=""></p>
+        </div>
+        <div class='gaine_list'>
+            <h1>服务订单</h1>
+            <p><img src="../image/ren.png" alt=""></p>
+        </div>
+    </div>
+    <div class='gaine'>
+        <div class='gaine_list'>
+            <h1>我的帖子</h1>
+            <p><img src="../image/ren.png" alt=""></p>
+        </div>
+        <div class='gaine_list'>
+            <h1>我的活动</h1>
+            <p><img src="../image/ren.png" alt=""></p>
+        </div>
+        <div class='gaine_list'>
+            <h1>收货地址</h1>
+            <p><img src="../image/ren.png" alt=""></p>
+        </div>
+    </div>
+    <div class='gaine'>
+        <div class='gaine_list' onclick="opensetting()">
+            <h1>设置</h1>
+            <p><img src="../image/ren.png" alt=""></p>
+        </div>
+        <div class='gaine_list'>
+            <h1>关于我们</h1>
+            <p><img src="../image/ren.png" alt=""></p>
+        </div>
+        <div class='gaine_list'>
+            <h1>意见反馈</h1>
+            <p><img src="../image/ren.png" alt=""></p>
+        </div>
+    </div>
+    <div class='base'>-- 为社区公共权益而生 --</div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
+<script>
+    //个人信息
+    function openMyinformation() {
+        api.openWin({
+            name: 'My_information_win',
+            url: 'my/My_information_win.html'
+        });
+    }
+    //跳转设置
+    function opensetting() {
+        api.openWin({
+            name: 'My_setting_win',
+            url: 'my/My_setting_win.html'
+        });
+    }
+    //打开页面
+    function openUpdatePassword() {
+        api.openWin({
+            name: 'My_information_win',
+            url: 'my/My_information_win.html'
+        });
+    }
+    //打开页面
+    function openRegister() {
+        api.openWin({
+
+            name: 'My_setting_win',
+            url: 'login/My_setting_win.html'
+        });
+    }
+    //打开页面
+    function openWelcome() {
+        api.openWin({
+            name: 'welcome_frm',
+            url: 'login/welcome_frm.html'
+        });
+    }
+    //打开登录页面
+    function openLogin() {
+        api.openWin({
+            name: 'login_frm',
+            url: 'login/login_frm.html'
+        });
+    }
+</script>
+
+</html>

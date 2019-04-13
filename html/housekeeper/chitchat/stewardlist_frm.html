@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>管家列表</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <link rel="stylesheet" href="../../../css/aui.css">
+    <script src='../../../script/rem.js'></script>
+    <script src='../../../script/vue.js'></script>
+    <script src='../../../script/api.js'></script>
+    <style type="text/css">
+      body{background: #fff;}
+      .stewardlist{
+        width: 100%;
+        padding:1rem 0 0 1rem;
+
+        box-sizing: border-box;
+      }
+      .stewar{
+        width: 100%;
+        border-bottom: #f8f8f8 solid 0.05rem;
+        display: flex;
+        height: 4rem;
+      }
+      .stewar>p{
+        width:20%;
+        height: 4rem;
+        padding: 0.75rem 0 0 0;
+      }
+      .stewar>p>img{
+        width:2.5rem;
+        height: 2.5rem;
+        border-radius:50%;
+      }
+      .stewar>h1{
+        width: 70%;
+        height: 4rem;
+        font-size:0.85rem;
+        font-weight: 600;
+        color: #333333;
+        line-height: 4rem;
+      }
+      .stewar>h2{
+        width: 10%;
+        height: 4rem;
+        padding: 1.55rem 1rem 0 0;
+
+      }
+      .stewar>h2>img{
+        width: 0.5rem;
+        height: 0.9rem;
+        float:right;
+      }
+    </style>
+</head>
+<body>
+  <div id='app'>
+    <div class='stewardlist'>
+        <div class='stewar'>
+          <p><img src="../../../image/my/portrait.png" alt=""></p>
+          <h1>管家秋海棠</h1>
+          <h2><img src="../../../image/ren.png" alt=""></h2>
+        </div>
+        <div class='stewar'>
+          <p><img src="../../../image/my/portrait.png" alt=""></p>
+          <h1>管家秋海棠</h1>
+          <h2><img src="../../../image/ren.png" alt=""></h2>
+        </div>
+    </div>
+  </div>
+</body>
+<script>
+    new Vue({
+         el: "#app",
+         data: {
+
+         },
+         methods: {
+
+         }
+     })
+</script>
+</html>

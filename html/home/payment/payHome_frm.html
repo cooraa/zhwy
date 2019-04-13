@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>收费主页</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/aui-slide.css" />
+    <link rel="stylesheet" href="../../../css/home/payment/payHome.css">
+    <script type="text/javascript" src="../../../script/rem.js"></script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- 轮播图 -->
+        <section class="aui-content">
+            <div id="aui-slide">
+                <div class="aui-slide-wrap">
+                    <div class="aui-slide-node" v-for="item in wheelData">
+                        <img :src="item.url" />
+                    </div>
+                </div>
+                <div class="aui-slide-page-wrap">
+                    <!--分页容器-->
+                </div>
+            </div>
+        </section>
+        <!-- paylist -->
+        <section class="pay-list">
+            <div class="pay-item red-bg" onclick="openWYPage()">
+                <div class="title">物业费</div>
+                <div class="right-c">
+                    <embed src="../../../image/home/right-c.svg" width="16" height="16" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                </div>
+            </div>
+            <div class="pay-item violet-bg">
+                <div class="title">燃气费</div>
+                <div class="right-c">
+                    <embed src="../../../image/home/right-c.svg" width="16" height="16" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                </div>
+            </div>
+            <div class="pay-item orange-bg" onclick="openWaterPage()">
+                <div class="title">水费</div>
+                <div class="right-c">
+                    <embed src="../../../image/home/right-c.svg" width="16" height="16" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                </div>
+            </div>
+            <div class="pay-item blue-bg">
+                <div class="title">电费</div>
+                <div class="right-c">
+                    <embed src="../../../image/home/right-c.svg" width="16" height="16" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                </div>
+            </div>
+            <div class="pay-item violet-bg">
+                <div class="title">宽带</div>
+                <div class="right-c">
+                    <embed src="../../../image/home/right-c.svg" width="16" height="16" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                </div>
+            </div>
+            <div class="pay-item orange-bg">
+                <div class="title">社保</div>
+                <div class="right-c">
+                    <embed src="../../../image/home/right-c.svg" width="16" height="16" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                </div>
+            </div>
+            <div class="pay-item blue-bg">
+                <div class="title">暖气费</div>
+                <div class="right-c">
+                    <embed src="../../../image/home/right-c.svg" width="16" height="16" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                </div>
+            </div>
+            <div class="pay-item red-bg">
+                <div class="title">充值话费</div>
+                <div class="right-c">
+                    <embed src="../../../image/home/right-c.svg" width="16" height="16" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                </div>
+            </div>
+            <div class="pay-item orange-bg">
+                <div class="title">油卡</div>
+                <div class="right-c">
+                    <embed src="../../../image/home/right-c.svg" width="16" height="16" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                </div>
+            </div>
+        </section>
+    </div>
+  <!-- 模态弹窗 -->
+    <div class="model u-hide">
+      <div class="model-body">
+        <div class="model-item">上海新城金郡</div>
+        <div class="model-item">上海新城金郡</div>
+        <div class="model-btn cancel">取消</div>
+      </div>
+   </div>
+</body>
+<script type="text/javascript" src="../../../script/api.js"></script>
+<script type="text/javascript" src="../../../script/aui-slide.js"></script>
+<script type="text/javascript" src="../../../script/vue.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        api.parseTapmode();
+    };
+    new Vue({
+            el: "#app",
+            data: {
+                wheelData: [{
+                    url: '../../../image/home/b1.jpg'
+                }, {
+                    url: '../../../image/home/b2.jpg'
+                }, {
+                    url: '../../../image/home/b3.jpg'
+                }]
+            },
+            methods: {
+
+            }
+        })
+        // 轮播图
+    var slide = new auiSlide({
+        container: document.getElementById("aui-slide"),
+        "height": 164,
+        "speed": 300,
+        "pageShow": true,
+        "autoPlay": 3000, //自动播放
+        "pageStyle": 'dot',
+        "loop": true,
+        'dotPosition': 'center'
+    })
+    //打开物业缴费
+    function openWYPage(){
+      api.openWin({
+          name: 'payUnitAdd_win',
+          url: './payUnitAdd_win.html'
+      });
+
+    }
+    //打开水费缴费
+    function openWaterPage(){
+      api.openWin({
+          name: 'payWaterAdd_win',
+          url: './payWaterAdd_win.html'
+      });
+
+    }
+</script>
+
+</html>

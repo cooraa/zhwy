@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>缴费订单</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <link rel="stylesheet" href="../../../css/home/payment/payOrder.css">
+    <script type="text/javascript" src="../../../script/rem.js"></script>
+</head>
+
+<body>
+    <div class="c-area">
+        隆基观塘0325弄001单元302号
+    </div>
+    <div class="order-list">
+        <div class="order-item border-b">
+            <div class="item-name">
+                <label><input class="aui-radio" type="radio" name="radio"  checked=""></label>
+                <span>住宅物业管理费</span>
+                <p>2017/11/01-2018/11/01</p>
+            </div>
+            <div class="money">
+                <span>328.00</span>
+                <i class="aui-iconfont aui-icon-down"></i>
+                <div class="detail">
+                    328.00
+                </div>
+            </div>
+        </div>
+        <div class="order-item border-b">
+            <div class="item-name">
+                <label><input class="aui-radio" type="radio" name="radio"  checked=""></label>
+                <span>住宅物业管理费</span>
+            </div>
+            <div class="money">
+                <span>328.00</span>
+                <i class="aui-iconfont aui-icon-down"></i>
+            </div>
+        </div>
+    </div>
+    <div class="footer-btn">
+        <div class="check">
+            <input class="aui-checkbox" type="checkbox" name="demo1" checked="">全选
+        </div>
+        <div class="count-btn">
+            <div class="count-money">
+                合计：<span class="txt-red">￥556.94</span>
+            </div>
+            <div class="pay-btn" onclick="openConfirmPay()">付款</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        api.parseTapmode();
+    };
+    function openConfirmPay(){
+      api.openWin({
+          name: 'payConfirm_win',
+          url: './payConfirm_win.html' 
+      });
+
+    }
+</script>
+
+</html>

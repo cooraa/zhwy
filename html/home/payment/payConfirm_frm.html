@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>确认缴费</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <link rel="stylesheet" href="../../../css/home/house/home-comm.css">
+    <link rel="stylesheet" href="../../../css/home/payment/payConfirm.css">
+    <script type="text/javascript" src="../../../script/rem.js"></script>
+</head>
+
+<body>
+    <section class="aui-content">
+        <ul class="aui-list aui-list-in mt10">
+            <li class="aui-list-item border-b">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">
+                        房间号
+                    </div>
+                    <div class="aui-list-item-right">隆基观塘0325弄302号</div>
+                </div>
+            </li>
+            <li class="aui-list-item border-b">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">
+                        验证信息
+                    </div>
+                    <div class="aui-list-item-right">柳岸荷</div>
+                </div>
+            </li>
+            <li class="aui-list-item border-b">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">
+                        收费单位
+                    </div>
+                    <div class="aui-list-item-right">奥林匹克</div>
+                </div>
+            </li>
+        </ul>
+        <ul class="aui-list aui-list-in mt10">
+            <li class="aui-list-item border-b">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">
+                        住宅物业管理费
+                    </div>
+                    <div class="aui-list-item-right">228.94</div>
+                </div>
+            </li>
+            <li class="aui-list-item border-b">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">
+                        车辆管理费
+                    </div>
+                    <div class="aui-list-item-right">328.00</div>
+                </div>
+            </li>
+            <li class="aui-list-item border-b">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">
+
+                    </div>
+                    <div class="aui-list-item-right">合计：<span class="txt-red">￥556.97</span></div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <div class="btn btn-gray">立即缴费</div>
+    <div class="btn btn-red" onclick="pay()">立即缴费</div>
+    <!-- model -->
+    <div class="model u-hide" id="payConModel">
+        <div id="payConfirmModel">
+            <div class="model-head border-b">
+                <i class="aui-iconfont aui-icon-close" onclick="closeModel()"></i>
+                <span>确认付款</span>
+            </div>
+            <div class="money">
+                ¥556.94
+            </div>
+            <ul class="aui-list aui-list-in">
+                <li class="aui-list-item border-b">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-title">
+                            缴费
+                        </div>
+                        <div class="aui-list-item-right">物业费</div>
+                    </div>
+                </li>
+                <li class="aui-list-item border-b" onclick="selectPayStyle()">
+                    <div class="aui-list-item-inner aui-list-item-arrow">
+                        <div class="aui-list-item-title">
+                            缴费方式
+                        </div>
+                        <div class="aui-list-item-right">支付宝</div>
+                    </div>
+                </li>
+            </ul>
+            <div class="pay-btn">立即付款</div>
+        </div>
+    </div>
+    <!-- 选择付款方式 -->
+    <div class="model u-hide" id="selectPayConModel">
+        <div id="selectPayStyle">
+            <div class="model-head border-b" onclick="backPayConfirmMode()">
+                <i class="aui-iconfont aui-icon-left"></i>
+                <span>选择缴费方式</span>
+            </div>
+            <ul class="aui-list aui-media-list">
+                <li class="aui-list-item aui-list-item-middle border-b">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-media">
+                           <embed src="../../../image/home/pay-wx.svg" width="24" height="24" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                        </div>
+                        <div class="aui-list-item-inner">
+                            微信
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item aui-list-item-middle border-b dui-red">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-media">
+                          <embed src="../../../image/home/pay-zhifubao.svg" width="24" height="24" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                        </div>
+                        <div class="aui-list-item-inner">
+                            支付宝
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item aui-list-item-middle border-b">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-media">
+                          <embed src="../../../image/home/pay-kuaijie.svg" width="24" height="24" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                        </div>
+                        <div class="aui-list-item-inner">
+                            快捷支付
+                        </div>
+                    </div>
+                </li>
+                <li class="aui-list-item aui-list-item-middle border-b">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-media">
+                          <embed src="../../../image/home/pay-post.svg" width="24" height="24" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+                        </div>
+                        <div class="aui-list-item-inner">
+                            POS系统支付
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        api.parseTapmode();
+    };
+    //立即支付
+    function pay(){
+       $api.removeCls($api.byId('payConModel'), 'u-hide');
+    }
+    //选择支付方式
+    function selectPayStyle(){
+      $api.addCls($api.byId('payConModel'), 'u-hide');
+      $api.removeCls($api.byId('selectPayConModel'), 'u-hide');
+    }
+    //返回支付确认模态框
+    function backPayConfirmMode(){
+      $api.removeCls($api.byId('payConModel'), 'u-hide');
+      $api.addCls($api.byId('selectPayConModel'), 'u-hide');
+    }
+    //立即付款按钮（暂时关闭模态框）
+    function closeModel(){
+        $api.addCls($api.byId('payConModel'), 'u-hide');
+    }
+</script>
+
+</html>

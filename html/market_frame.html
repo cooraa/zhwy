@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>市集</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="../css/market/market.css" />
+    <script src='../script/rem.js'></script>
+</head>
+  
+<body>
+    <div id="app" v-cloak>
+        <!-- 顶部tab -->
+        <div class="tab-nav">
+            <div class="tab-item" v-for="(item,index) in tabData" v-bind:class="[tabIndex==index ? 'tabAactive'  : '']" v-on:click="tabToggle(index)">
+                {{item}}
+            </div>
+        </div>
+        <div class="tab0" v-show="tabIndex==0">
+            <!-- 轮播图 -->
+            <section class="aui-content">
+                <div id="tab0-aui-slide">
+                    <div class="aui-slide-wrap">
+                        <div class="aui-slide-node" v-for="item in wheelData">
+                            <img :src="item.url" />
+                        </div>
+                    </div>
+                    <div class="aui-slide-page-wrap">
+                        <!--分页容器-->
+                    </div>
+                </div>
+            </section>
+            <!-- 九宫格 -->
+            <section class="aui-grid">
+                <div class="aui-row nineGong-row">
+                    <div class="aui-col-xs-3 nineGong" v-for="item in nineGong">
+                        <img :src="item.url" class="icon">
+                        <div class="aui-grid-label">{{item.name}}</div>
+                    </div>
+                </div>
+            </section>
+            <!-- 商家推荐 -->
+            <section>
+                <div class="activity-head">
+                    <div class="head-name">商家推荐</div>
+                </div>
+                <div class="store-list">
+                    <div class="store-item" v-for="item in store">
+                        <img :src="item.url" alt="">
+                        <div class="title txt-nowrap">{{item.title}}</div>
+                        <div class="price">{{item.price}}</div>
+                    </div>
+                </div>
+            </section>
+            <!-- 天天特价 -->
+            <section>
+                <div class="activity-head">
+                    <div class="head-name">天天特价</div>
+                </div>
+                <div class="daily-list">
+                    <div class="daily-item">
+                        <div class="title">主题特惠</div>
+                        <div class="price">
+                            <span>一分钱</span>疯抢
+                        </div>
+                        <img src="../image/market/goods1.png" alt="">
+                    </div>
+                    <div class="daily-item">
+                        <div class="title">主题特惠</div>
+                        <div class="price">
+                            <span>一分钱</span>疯抢
+                        </div>
+                        <img src="../image/market/goods1.png" alt="">
+                    </div>
+                </div>
+            </section>
+            <!-- 优惠券 -->
+            <section>
+                <div class="activity-head">
+                    <div class="head-name">优惠券</div>
+                    <div class="see-all">
+                        <span>查看更多</span>
+                        <img src="../image/home/right.png" alt="">
+                    </div>
+                </div>
+                <div class="coupon-list">
+                    <div class="coupon-item">
+                        <div class="coupon-l">
+                            <div class="price">
+                                <span>20</span>元
+                            </div>
+                            <div class="desc">无金额门槛</div>
+                        </div>
+                        <div class="coupon-r">
+                            <div class="title">进店优惠券领取</div>
+                            <div class="desc">店铺：美美美美旗舰店</div>
+                            <div class="desc">期限：2019.03.25 — 2019.04.05</div>
+                        </div>
+                    </div>
+                    <div class="coupon-item">
+                        <div class="coupon-l">
+                            <div class="price">
+                                <span>50</span>元
+                            </div>
+                            <div class="desc">满500可用</div>
+                        </div>
+                        <div class="coupon-r">
+                            <div class="title">进店优惠券领取</div>
+                            <div class="desc">店铺：美美美美旗舰店</div>
+                            <div class="desc">期限：2019.03.25 — 2019.04.05</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- go -->
+            <div class="bar-img">
+                <img src="../image/market/bar2.png" alt="">
+            </div>
+            <div class="bar-img">
+                <img src="../image/market/bar1.png" alt="">
+            </div>
+        </div>
+        <div class="tab1" v-show="tabIndex==1">
+            <!-- 轮播图 -->
+            <section class="aui-content">
+                <div id="tab1-aui-slide">
+                    <div class="aui-slide-wrap">
+                        <div class="aui-slide-node" v-for="item in wheelData">
+                            <img :src="item.url" />
+                        </div>
+                    </div>
+                    <div class="aui-slide-page-wrap">
+                        <!--分页容器-->
+                    </div>
+                </div>
+            </section>
+            <!-- 商家推荐 -->
+            <section>
+                <div class="activity-head">
+                    <div class="head-name">商家推荐</div>
+                </div>
+                <div class="store-list">
+                    <div class="store-item" v-for="item in store">
+                        <img :src="item.url" alt="">
+                        <div class="title">{{item.title}}</div>
+                    </div>
+                </div>
+            </section>
+            <!-- 邻里特惠 -->
+            <section>
+                <div class="activity-head">
+                    <div class="head-name">邻里特惠</div>
+                </div>
+                <div class="preferential-list">
+                    <div class="preferential-item">
+                        <div class="goods">
+                            <img src="../image/market/goods1.png" alt="">
+                            <div class="qiang">必抢</div>
+                        </div>
+                        <div class="title">清雅白茶凝萃洗发护发关爱每一个发丝</div>
+                        <div class="price">
+                            <span class="txt-red">¥78</span>
+                            <div class="coupon">买就送优惠券</div>
+                        </div>
+                        <div class="number">已售1620瓶</div>
+                    </div>
+                    <div class="preferential-item">
+                        <div class="goods">
+                            <img src="../image/market/goods1.png" alt="">
+                        </div>
+                        <div class="title">清雅白茶凝萃洗发护发关爱每一个发丝</div>
+                        <div class="price">
+                            <span class="txt-red">¥78</span>
+                            <div class="coupon">买就送优惠券</div>
+                        </div>
+                        <div class="number">已售1620瓶</div>
+                    </div>
+                    <div class="preferential-item">
+                        <div class="goods">
+                            <img src="../image/market/goods1.png" alt="">
+                        </div>
+                        <div class="title">清雅白茶凝萃洗发护发关爱每一个发丝</div>
+                        <div class="price">
+                            <span class="txt-red">¥78</span>
+                            <div class="coupon">买就送优惠券</div>
+                        </div>
+                        <div class="number">已售1620瓶</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="tab2" v-show="tabIndex==2">
+            <div class="aui-card-list aui-border-b">
+                <div class="aui-card-list-header aui-card-list-user">
+                    <div class="aui-card-list-user-avatar">
+                        <img src="../image/home/b1.jpg" class="aui-img-round" />
+                    </div>
+                    <div class="aui-card-list-user-name">
+                        <div class="title">AUI</div>
+                        <div class="time-money">
+                            <div class="money">￥140.00</div>
+                            <div class="time">15分钟前</div>
+                        </div>
+                    </div>
+                    <div class="aui-card-list-user-info">
+                        <i class="aui-iconfont aui-icon-location"></i>
+                        <span>上海市静安区预览小区3栋</span>
+                    </div>
+                </div>
+                <div class="aui-card-list-content-padded">
+                    <p>前段时间刚买了一辆自行车，由于换工作地方比较远所以要把自行车换成自己需要的物品，有需要的可以…</p>
+                    <section class="aui-grid">
+                        <div class="aui-row">
+                            <div class="aui-col-xs-4 dynamic">
+                                <img src="../image/home/b1.jpg" class="icon">
+                            </div>
+                            <div class="aui-col-xs-4 dynamic">
+                                <img src="../image/home/b1.jpg" class="icon">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="card-footer">
+                    <div class="new">全新</div>
+                    <div class="zan">
+                        <div><i class="aui-iconfont aui-icon-laud"></i> 888</div>
+                        <div class="commit"><i class="aui-iconfont aui-icon-note"></i> 666</div>
+                    </div>
+                </div>
+            </div>
+            <div class="aui-card-list aui-border-b">
+                <div class="aui-card-list-header aui-card-list-user">
+                    <div class="aui-card-list-user-avatar">
+                        <img src="../image/home/b1.jpg" class="aui-img-round" />
+                    </div>
+                    <div class="aui-card-list-user-name">
+                        <div class="title">AUI</div>
+                        <div class="time-money">
+                            <div class="money">￥140.00</div>
+                            <div class="time">15分钟前</div>
+                        </div>
+                    </div>
+                    <div class="aui-card-list-user-info">
+                        <i class="aui-iconfont aui-icon-location"></i>
+                        <span>上海市静安区预览小区3栋</span>
+                    </div>
+                </div>
+                <div class="aui-card-list-content-padded">
+                    <p>前段时间刚买了一辆自行车，由于换工作地方比较远所以要把自行车换成自己需要的物品，有需要的可以…</p>
+                    <section class="aui-grid">
+                        <div class="aui-row">
+                            <div class="aui-col-xs-4 dynamic">
+                                <img src="../image/home/b1.jpg" class="icon">
+                            </div>
+                            <div class="aui-col-xs-4 dynamic">
+                                <img src="../image/home/b1.jpg" class="icon">
+                            </div>
+                            <div class="aui-col-xs-4 dynamic">
+                                <img src="../image/home/b1.jpg" class="icon">
+                            </div>
+                            <div class="aui-col-xs-4 dynamic">
+                                <img src="../image/home/b1.jpg" class="icon">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="card-footer">
+                    <div class="new">全新</div>
+                    <div class="zan">
+                        <div><i class="aui-iconfont aui-icon-laud"></i> 888</div>
+                        <div class="commit"><i class="aui-iconfont aui-icon-note"></i> 666</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab3" v-show="tabIndex==3">
+            金服
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
+<script type="text/javascript" src="../script/vue.js"></script>
+<script type="text/javascript" src="../script/market/market.js"></script>
+<script type="text/javascript">
+</script>
+
+</html>

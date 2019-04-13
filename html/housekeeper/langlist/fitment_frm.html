@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>装修</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <link rel="stylesheet" href="../../../css/aui.css">
+    <link rel="stylesheet" href="../../../css/housekeeper/assistant.css">
+    <script src='../../../script/rem.js'></script>
+    <script src='../../../script/vue.js'></script>
+    <script src='../../../script/api.js'></script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+  <div id='assistant'>
+      <div class='matter'>
+        <h1>报修描述</h1>
+        <div class='tite_matter'>
+            <textarea v-model='form.textarea'  placeholder="请描述您的报修情况..."></textarea>
+            <div class='imglist'>
+              <div><img src="../../../image/housekeeper/picture.png" alt=""><p><img src="../../../image/housekeeper/guan.png" alt=""></p></div>
+                <div><img src="../../../image/housekeeper/picture.png" alt=""></div>
+            </div>
+        </div>
+        <p><span>{{num}}</span>/500</p>
+      </div>
+      <div class='elsetime'>
+        <h1>上门时间</h1>
+        <div v-on:click='cksettime'>选择时间</div>
+        <p v-on:click='cksettime'><img src="../../../image/ren.png" alt=""></p>
+      </div>
+
+      <div class='buttonm'>
+        <button type="button" name="button">提交</button>
+      </div>
+      <div class='heat'>
+          全国服务热线：4008-900-905
+      </div>
+
+      <!-- 遮罩层 -->
+    <transition>
+      <div class='shcometime' v-if='settimeshow'>
+          <p v-on:click='cksettime'></p>
+         <div class='cometime'>
+            <h1>上门时间</h1>
+            <div>
+              <div class='daylist'>
+                <div v-on:click='switchover(1)' :class='form.day==1?"setday":""'>今天</div>
+                <div v-on:click='switchover(2)' :class='form.day==2?"setday":""'>明天</div>
+                <div v-on:click='switchover(3)' :class='form.day==3?"setday" : ""'>后天</div>
+              </div>
+              <div class='timelist'>
+                <div v-if='form.day==1' :class='form.item==1?"settime":""' v-on:click='timechover(1)'>
+                  <h1>尽快上门</h1>
+                  <p><input class="aui-checkbox" type="radio" name="demo1"  :checked="form.item==1"></p>
+                </div>
+                <div :class='form.item==2?"settime":""' v-on:click='timechover(2)'>
+                  <h1>8:00-11:30</h1>
+                  <p><input class="aui-checkbox" type="radio" name="demo1"  :checked="form.item==2"></p>
+                </div>
+                <div :class='form.item==3?"settime":""' v-on:click='timechover(3)'>
+                  <h1>13:30-19:30</h1>
+                  <p><input class="aui-checkbox" type="radio" name="demo1"  :checked="form.item==3"></p>
+                </div>
+                <div :class='form.item==4?"settime":""' v-on:click='timechover(4)'>
+                  <h1>17:30-23:00(电话预约)</h1>
+                  <p><input class="aui-checkbox" type="radio" name="demo1"  :checked="form.item==4"></p>
+                </div>
+              </div>
+            </div>
+         </div>
+      </div>
+    </transition>
+    </div>
+<script>
+var housekeeper=  new Vue({
+          el: "#assistant",
+          data: {
+            form:{
+              textarea:'',
+              ischeckbox:'',
+              ischecked:false,
+              day:1,
+              item:1,
+            },
+            num:0,
+            tabAaclass:1,
+            settimeshow:false,
+          },
+          methods: {
+            timechover(vale){
+              this.form.item=vale
+            },
+            switchover(vale){//选择天
+              this.form.day=vale
+              if(this.form.day>1&&this.form.item==1){
+                this.form.item=2;
+              }
+            },
+            cksettime(){//显示隐藏选择上门时间
+              if(this.settimeshow){
+                  this.settimeshow=false;
+              }else{
+                this.settimeshow=true;
+              }
+            },
+            cktabAactive(value){//切换室内和公区
+              this.tabAaclass=value;
+            },
+            checkboxs(){//勾选需要看下客服
+              if(this.form.ischecked==false){
+                this.form.ischecked=true;
+              }else{
+                this.form.ischecked=false;
+              }
+            },
+          },
+          watch:{
+            'form.textarea':function(newVal){
+              if(newVal.length>500){
+                newVal= newVal.substring(0,500)
+              }
+              this.form.textarea=newVal;
+              this.num=newVal.length;
+            }
+          }
+        })
+</script>
+</body>
+</html>

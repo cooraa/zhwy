@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="../css/home/home.css" />
+    <script src='../script/rem.js'></script>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- 轮播图 -->
+        <section class="aui-content">
+            <div id="aui-slide">
+                <div class="aui-slide-wrap">
+                    <div class="aui-slide-node" v-for="item in wheelData">
+                        <img :src="item.url" />
+                    </div>
+                </div>
+                <div class="aui-slide-page-wrap">
+                    <!--分页容器-->
+                </div>
+            </div>
+        </section>
+        <!-- 九宫格 -->
+        <section class="aui-grid">
+            <div class="aui-row nineGong-row">
+                <div class="aui-col-xs-3" v-for="(item,index) in nineGong" v-on:click="openPage(index)">
+                    <img :src="item.url" class="icon">
+                    <div class="aui-grid-label">{{item.name}}</div>
+                </div>
+            </div>
+        </section>
+        <!-- 物业公告 -->
+        <section class="aui-grid">
+            <div class="aui-row notice-box">
+                <div class="aui-col-xs-2 notice-title">
+                    <p>物业公告</p>
+                </div>
+                <div class="aui-col-xs-10 notice-con">
+                    <p>停水公告：本小区将于14日晚对1栋进行停水通知，望各业主</p>
+                    <p>停电公告：本小区将于16日晚对5栋进行停电通知，望各业主</p>
+                </div>
+            </div>
+        </section>
+        <!-- 社区活动 -->
+        <section class="community-activity">
+            <div class="activity-head">
+                <div class="head-name">社区活动</div>
+                <div class="see-all">
+                    <span>查看更多</span>
+                    <img src="../image/home/right.png" alt="">
+                </div>
+            </div>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-con txt-nowrap">
+                        <div class="activity-title txt-nowrap">关爱社区老人，给社区老人</div>
+                        <p>参与人数：2400</p>
+                        <p>活动地址：上海市浦东新区张江高科</p>
+                        <p>截止时间：2019/05/28 18:00</p>
+                        <div class="money">¥468.00</div>
+                    </div>
+                    <div class="activity-img">
+                        <img src="../image/home/b1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-con txt-nowrap">
+                        <div class="activity-title">关爱社区老人，给社区老人</div>
+                        <p>参与人数：2400</p>
+                        <p>活动地址：上海市浦东新区张江高科</p>
+                        <p>截止时间：2019/05/28 18:00</p>
+                        <div class="money">¥468.00</div>
+                    </div>
+                    <div class="activity-img">
+                        <img src="../image/home/b1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 物业管理app -->
+        <div class="bar-img">
+            <img src="../image/home/appLink.png" alt="">
+        </div>
+        <!-- footer -->
+        <footer id="footer">
+            <p>为社区公共权益而生</p>
+        </footer>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
+<script type="text/javascript" src="../script/vue.js"></script>
+<script>
+    new Vue({
+            el: "#app",
+            data: {
+                nineGong: [{
+                    name: '缴费',
+                    url: '../image/home/pay.png'
+                }, {
+                    name: '停车',
+                    url: '../image/home/parking.png'
+                }, {
+                    name: '门禁',
+                    url: '../image/home/accessControl.png'
+                }, {
+                    name: '投诉',
+                    url: '../image/home/complaint.png'
+                }, {
+                    name: '紧急按钮',
+                    url: '../image/home/urgent.png'
+                }, {
+                    name: '报修',
+                    url: '../image/home/repair.png'
+                }, {
+                    name: '帮手',
+                    url: '../image/home/helper.png'
+                }, {
+                    name: '查看更多',
+                    url: '../image/home/all.png'
+                }],
+                wheelData: [{
+                    url: '../image/home/b1.jpg'
+                }, {
+                    url: '../image/home/b2.jpg'
+                }, {
+                    url: '../image/home/b3.jpg'
+                }]
+            },
+            methods: {
+                openPage: function(index) {
+                    switch (index) {
+                        case 0:
+                            api.openWin({
+                                name: 'payHome_win',
+                                url: './home/payment/payHome_win.html'
+                            });
+                            break;
+                        default:
+
+                    }
+                }
+            }
+        })
+        // 轮播图
+    var slide = new auiSlide({
+        container: document.getElementById("aui-slide"),
+        "height": 164,
+        "speed": 300,
+        "pageShow": true,
+        "autoPlay": 3000, //自动播放
+        "pageStyle": 'dot',
+        "loop": true,
+        'dotPosition': 'center'
+    })
+</script>
+
+</html>

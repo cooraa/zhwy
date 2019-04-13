@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>新增房号</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css" />
+    <link rel="stylesheet" href="../../../css/home/house/home-comm.css">
+    <script type="text/javascript" src="../../../script/rem.js"></script>
+</head>
+
+<body>
+    <section class="aui-content mt10">
+        <ul class="aui-list aui-list-in">
+            <li class="aui-list-item address-info border-b" onclick="openStoriedBuilding()">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">楼栋</div>
+                    <div class="aui-list-item-right"></div>
+                </div>
+            </li>
+            <li class="aui-list-item border-b">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">单元</div>
+                    <div class="aui-list-item-right">
+                        <input type="text" placeholder="请输入" />
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item border-b">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">户号</div>
+                    <div class="aui-list-item-right">
+                        <input type="text" placeholder="请输入" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <div class="btn btn-gray">下一步</div>
+    <div class="btn btn-red" onclick="openPayOrder()">下一步</div>
+</body>
+<script type="text/javascript" src="../../../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {}
+        //打开页面
+    function openStoriedBuilding() {
+        api.openWin({
+            name: 'storiedBuilding_win',
+            url: 'storiedBuilding_win.html'
+        });
+    }
+    //openPayOrder
+    function openPayOrder() {
+        api.openWin({
+            name: 'payOrder_win',
+            url: 'payOrder_win.html'
+        });
+    }
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>login</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/login/common.css" />
+    <script src='../../script/rem.js'></script>
+</head>
+
+<body>
+    <div class="header-nav" id="headerNav">
+        <img src="../../image/login/back.png" alt="" onclick="closeWin()">
+    </div>
+    <div class="wrapper">
+        <div class="page-name">
+            <p class="title">登录账户</p>
+        </div>
+        <div class="com-form">
+            <div class="input-item success-b">
+                <input type="text" placeholder="请输入用户名/手机号/邮箱" autofocus="autofocus" />
+                <div class="input-icon success-status"></div>
+                <!-- <div class="input-icon error-status"></div> -->
+            </div>
+            <div class="input-item error-b">
+                <input type="password" placeholder="请输入密码" />
+                <div class="input-icon see-password"></div>
+                <div class="input-icon error-status"></div>
+            </div>
+            <a class="red-txt" href="updatePassword_frm.html">忘记密码</a>
+        </div>
+        <div class="primary-btn con-btn mar40 box-shadow">登 录</div>
+        <div class="tips">
+            <span>还没有账户？</span>
+            <a class="red-txt" href="register_frm.html">立即注册</a>
+        </div>
+        <div class="wx-login">
+            <img src="../../image/login/wx.png" alt="">
+            <p>微信登录</p>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+    function closeWin() {
+        api.closeWin({});
+    }
+</script>
+
+</html>

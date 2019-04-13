@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>帮手</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <link rel="stylesheet" href="../../../css/aui.css">
+    <link rel="stylesheet" href="../../../css/housekeeper/assistant.css">
+    <script src='../../../script/rem.js'></script>
+    <script src='../../../script/vue.js'></script>
+    <script src='../../../script/api.js'></script>
+    <style type="text/css">
+      .tab_tally{
+        width:100%;
+        margin:0 auto;
+        background: #fff;
+        height:3rem;
+        overflow-x: scroll;
+        padding:0 0 0 0.5rem;
+      }
+      .tab_tally>div{
+        display: flex;
+        height: 2.5rem;
+        padding-top: 0.5rem;
+      }
+      .tab_tally>div>p{
+        float: left;
+        margin:0 0.5rem 0 0;
+        height: 1.25rem;
+        line-height: 1.25rem;
+        padding:0  0.5rem;
+        max-width:8rem;
+        text-align: center;
+        border:#D6D6D6 solid 0.01rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #333333;
+        border-radius: 1rem;
+        min-width:5rem;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap
+      }
+      .tab_tally>div>p.favour{
+        color:#F93A3A;
+        border:#FEEEEE;
+        background: #FEEEEE;
+      }
+      .tab_tally>div>p:last-child{
+        width: 3rem;
+        padding-top: 0.05rem;
+      }
+      .tab_tally>div>p>span{
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        line-height: 1rem;
+        text-align: center;
+        border: 0.05rem solid #f8f8f8;
+        border-radius: 50%;
+        box-sizing: border-box;
+      }
+      .bandbox{
+        width: 100%;
+        background:#fff;
+        margin-top: 0.5rem;
+      }
+      .band{
+        width: 100%;
+        height: 2rem;
+        display: flex;
+        background: #fff;
+        padding:0 0.5rem;
+        border-top:#f8f8f8 solid 0.05rem;
+      }
+
+      .elsetime{
+        margin: 0;
+        border-top:#f8f8f8 solid 0.05rem;
+      }
+      .band>h1{
+        width: 80%;
+        height: 2rem;
+        font-size:0.9rem;
+        font-weight: 600;
+        line-height: 2rem;
+      }
+      .band>div{
+        width: 20%;
+        height: 2rem;
+        padding:0.5rem 0.5rem 0 0;
+
+      }
+      .band>div>input{
+      float: right;
+      }
+      .band>div>input.aui-switch:checked{
+        border-color: #7ED321;
+        background-color: #7ED321;
+      }
+    </style>
+</head>
+<body>
+  <div id='assistant'>
+      <div class='tab_tally'>
+        <div v-bind:width='options.length*22+"%"'>
+          <p :class='form.favours==item.value?"favour":""' v-bind:width='item.name.length+3+"rem"' v-for='item in options' v-on:click='opti(item.value)'>{{item.name}}</p>
+          <p><span>+</span></p>
+        </div>
+      </div>
+      <div class='matter'>
+        <div class='tite_matter'>
+            <textarea v-model='form.textarea'  :placeholder="placeholders"></textarea>
+            <div class='imglist' v-if='type==1'>
+              <div><img src="../../../image/housekeeper/picture.png" alt=""><p><img src="../../../image/housekeeper/guan.png" alt=""></p></div>
+                <div><img src="../../../image/housekeeper/picture.png" alt=""></div>
+            </div>
+        </div>
+        <p><span>{{num}}</span>/500</p>
+      </div>
+      <div class='bandbox'>
+        <div class='band' v-if='bucket==1'>
+            <h1>有空桶需要到回</h1>
+            <div>
+              <input class="aui-switch" type="checkbox" name="demo2" checked="">
+            </div>
+        </div>
+        <div class='elsetime'>
+          <h1>上门时间</h1>
+          <div v-on:click='cksettime'>选择时间</div>
+          <p v-on:click='cksettime'><img src="../../../image/ren.png" alt=""></p>
+        </div>
+    </div>
+
+      <div class='buttonm'>
+        <button type="button" name="button">提交</button>
+      </div>
+      <div class='heat'>
+          全国服务热线：4008-900-905
+      </div>
+
+      <!-- 遮罩层 -->
+    <transition>
+      <div class='shcometime' v-if='settimeshow'>
+          <p v-on:click='cksettime'></p>
+         <div class='cometime'>
+            <h1>上门时间</h1>
+            <div>
+              <div class='daylist'>
+                <div v-on:click='switchover(1)' :class='form.day==1?"setday":""'>今天</div>
+                <div v-on:click='switchover(2)' :class='form.day==2?"setday":""'>明天</div>
+                <div v-on:click='switchover(3)' :class='form.day==3?"setday" : ""'>后天</div>
+              </div>
+              <div class='timelist'>
+                <div v-if='form.day==1' :class='form.item==1?"settime":""'  v-on:click='timechover(1)'>
+                  <h1>尽快上门</h1>
+                  <p><input class="aui-checkbox" type="radio" name="demo1"  :checked="form.item==1"></p>
+                </div>
+                <div :class='form.item==2?"settime":""' v-on:click='timechover(2)'>
+                  <h1>8:00-11:30</h1>
+                  <p><input class="aui-checkbox" type="radio" name="demo1"  :checked="form.item==2"></p>
+                </div>
+                <div :class='form.item==3?"settime":""' v-on:click='timechover(3)'>
+                  <h1>13:30-19:30</h1>
+                  <p><input class="aui-checkbox" type="radio" name="demo1"  :checked="form.item==3"></p>
+                </div>
+                <div :class='form.item==4?"settime":""' v-on:click='timechover(4)'>
+                  <h1>17:30-23:00(电话预约)</h1>
+                  <p><input class="aui-checkbox" type="radio" name="demo1"  :checked="form.item==4"></p>
+                </div>
+              </div>
+            </div>
+         </div>
+      </div>
+    </transition>
+    </div>
+<script>
+var housekeeper=  new Vue({
+          el: "#assistant",
+          data: {
+            form:{
+              textarea:'',//输入需求
+              ischeckbox:'',//
+              ischecked:false,
+              day:1,
+              item:1,
+              favours:1,
+            },
+            type:0,
+            bucket:1,
+            num:0,
+            tabAaclass:1,
+            settimeshow:false,
+            options:[
+              {name:'送水',value:1,type:0,bucket:1,placeholders:'请输入你需要桶装的 “品牌”和“数量”'},
+              {name:'办理宽带',value:2,type:0,bucket:0,placeholders:'请输入你需要办理的业务'},
+              {name:'接送小孩',value:3,type:1,bucket:0,placeholders:'请输入您的小孩名字,年龄,学校,老师联系方式,以便我们更好地为您服务.....'},
+              {name:'取东西',value:4,type:1,bucket:0,placeholders:'请输入您要取的物品名称,家庭住址,存放位置件·敌/数量,我们尽快为您服务….'},
+              {name:'开门',value:5,type:1,bucket:0,placeholders:'请输入您的家庭地址,几单元几室,家庭现状况，以便我们更好的为您服务.….'},
+            ],
+            placeholders:'请输入你需要桶装的 “品牌”和“数量” '
+          },
+          methods: {
+            opti(val){
+              this.form.favours=val;
+              this.type= this.options[val-1].type;
+              this.bucket= this.options[val-1].bucket;
+              this.placeholders=this.options[val-1].placeholders;
+            },
+            timechover(vale){
+              this.form.item=vale;
+            },
+            switchover(vale){//选择天
+              this.form.day=vale;
+              if(this.form.day>1&&this.form.item==1){
+                this.form.item=2;
+              }
+            },
+            cksettime(){//显示隐藏选择上门时间
+              if(this.settimeshow){
+                  this.settimeshow=false;
+              }else{
+                this.settimeshow=true;
+              }
+            },
+            cktabAactive(value){//切换室内和公区
+              this.tabAaclass=value;
+            },
+            checkboxs(){//勾选需要看下客服
+              if(this.form.ischecked==false){
+                this.form.ischecked=true;
+              }else{
+                this.form.ischecked=false;
+              }
+            },
+          },
+          watch:{
+            'form.textarea':function(newVal){
+              if(newVal.length>500){
+                newVal= newVal.substring(0,500)
+              }
+              this.form.textarea=newVal;
+              this.num=newVal.length;
+            }
+          }
+        })
+</script>
+</body>
+</html>

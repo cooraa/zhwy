@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>新增缴费账户-水费</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/home/house/home-comm.css">
+    <link rel="stylesheet" href="../../../css/home/payment/payUnitAdd.css">
+    <script type="text/javascript" src="../../../script/rem.js"></script>
+    <style>
+        .question {
+            margin-right: 20px;
+        }
+
+        .question>i {
+            position: absolute;
+            top: 10px;
+            right: -22px;
+            font-size: 0.8rem;
+            color: #f93A3A;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="aui-content mt10">
+        <ul class="aui-list aui-list-in">
+            <li class="aui-list-item address-info border-b" onclick="openPayUnit()">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">缴费单位</div>
+                    <div class="aui-list-item-right"></div>
+                </div>
+            </li>
+            <li class="aui-list-item border-b">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">户号</div>
+                    <div class="aui-list-item-right question">
+                        <input type="text" placeholder="请输入" />
+                        <i class="aui-iconfont aui-icon-question" onclick="qustion()"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item border-b" onclick="openGroup()">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">分组</div>
+                    <div class="aui-list-item-right"></div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <div class="btn btn-gray">下一步</div>
+    <div class="agreement-check">
+        <input class="aui-checkbox" type="checkbox" name="demo1" checked="">
+        <div class="txt">我已阅读并同意<span>《支付宝自动缴费协议》</span></div>
+    </div>
+    <div class="btn btn-red" onclick="nexgPage()">下一步</div>
+</body>
+<script type="text/javascript" src="../../../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {}
+        //打开页面
+    function openPayUnit() {
+        api.openWin({
+            name: 'payUnit_win',
+            url: 'payUnit_win.html'
+        });
+    }
+
+
+    function openGroup() {
+        api.openWin({
+            name: 'personGroup_win',
+            url: 'personGroup_win.html'
+        });
+    }
+    //nexgPage
+    function nexgPage() {
+        api.openWin({
+            name: 'payWaterConfirm_win',
+            url: 'payWaterConfirm_win.html'
+        });
+    }
+    //qustion
+    function qustion(){
+      api.openWin({
+          name: 'waterQestion_win',
+          url: 'waterQestion_win.html'
+      });
+    }
+</script>
+
+</html>

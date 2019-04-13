@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>管家</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
+    <link rel="stylesheet" type="text/css" href="../css/housekeeper/housekeeper.css" />
+    <script type="text/javascript" src="../script/rem.js"></script>
+    <style media="screen">
+      .aui-slide-page-wrap{
+        bottom: 0;
+      }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <div id="cardHousekeeper">
+            <div id="avater" >
+                <img onclick='opensteward()' src="../image/home/b1.jpg" alt="">
+            </div>
+            <div id="housekeeperName">管家 秋海棠</div>
+            <div id="consultationNote">报修咨询记录</div>
+        </div>
+        <!-- 九宫格 -->
+        <section class="aui-grid">
+            <div class="aui-row nineGong-row">
+                <div class="aui-col-xs-3" v-for="item in nineGong" :data-nameval='item.nameval' v-on:click='openMyinformation(item.nameval)' >
+                    <img :src="item.url" class="icon" >
+                    <div class="aui-grid-label">{{item.name}}</div>
+                </div>
+            </div>
+        </section>
+        <!-- 轮播图 -->
+        <section class="aui-content">
+            <div id="aui-slide">
+                <div class="aui-slide-wrap">
+                    <div class="aui-slide-node" v-for="item in wheelData" >
+                        <img :src="item.url" />
+                    </div>
+                </div>
+                <div class="aui-slide-page-wrap">
+                    <!--分页容器-->
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
+<script type="text/javascript" src="../script/vue.js"></script>
+
+<script>
+
+   new Vue({
+            el: "#app",
+            data: {
+                nineGong: [{
+                    name: '缴费',
+                    nameval:'',
+                    url: '../image/housekeeper/pay.png'
+                }, {
+                    name: '咨询',
+                    nameval:'consult_win',
+                    url: '../image/housekeeper/consultation.png'
+                }, {
+                    name: '帮手',
+                    nameval:'assistant_win',//housekeeper/assistant_win.html
+                    url: '../image/housekeeper/helper.png'
+                }, {
+                    name: '报修',
+                    nameval:'repairs_win',
+                    url: '../image/housekeeper/repair.png'
+                }, {
+                    name: '租售',
+                    nameval:'',
+                    url: '../image/housekeeper/sell.png'
+                }, {
+                    name: '装修',
+                    nameval:'fitment_win',
+                    url: '../image/housekeeper/renovation.png'
+                }, {
+                    name: '过户',
+                    nameval:'',
+                    url: '../image/housekeeper/transper.png'
+                }, {
+                    name: '查看更多',
+                    nameval:'',
+                    url: '../image/housekeeper/all.png'
+                }],
+                wheelData: [{
+                    url: '../image/home/b1.jpg'
+                }, {
+                    url: '../image/home/b2.jpg'
+                }, {
+                    url: '../image/home/b3.jpg'
+                }]
+            },
+            methods: {
+              openMyinformation(nameval) {
+                // var nameval=_this.getAttribute('data-nameval')
+                var urla='housekeeper/langlist/'+nameval+'.html'
+                  if(nameval!=''){
+                   api.openWin({
+                         name: nameval,
+                         url:urla
+                     });
+                 }
+               }
+            }
+        })
+        // 轮播图
+    var slide = new auiSlide({
+        container: document.getElementById("aui-slide"),
+        "height": 80,
+        "speed": 1000,
+        "pageShow": true,
+        "autoPlay": 3000, //自动播放
+        "pageStyle": 'dot',
+        "loop": true,
+        'dotPosition': 'center'
+    })
+    //帮手
+   function opensteward() {
+        api.openWin({
+              name: 'steward_win',
+              url:'housekeeper/chitchat/steward_win.html'
+          });
+    }
+</script>
+
+</html>

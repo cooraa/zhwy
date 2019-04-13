@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>修改地址</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <link rel="stylesheet" href="../../../css/home/house/home-comm.css">
+    <script type="text/javascript" src="../../../script/rem.js"></script>
+</head>
+
+<body>
+    <section class="aui-content mt10">
+        <ul class="aui-list aui-list-in">
+            <li class="aui-list-item address-info">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">城市</div>
+                    <div class="aui-list-item-right"  onclick="openCity()">上海</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">社区</div>
+                    <div class="aui-list-item-right" onclick="openCommunity()">上海新城金郡</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">楼栋</div>
+                    <div class="aui-list-item-right" onclick="openBuilding()">底层001</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">单元</div>
+                    <div class="aui-list-item-right">
+                        <input type="text" placeholder="003" />
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">户号</div>
+                    <div class="aui-list-item-right">
+                        <input type="text" placeholder="402" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <div class="btn btn-gray">下一步</div>
+    <div class="btn btn-red">下一步</div>
+</body>
+<script type="text/javascript" src="../../../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {}
+        //打开页面
+    function openCommunity() {
+        api.openWin({
+            name: 'communitySelect_win',
+            url: 'communitySelect_win.html'
+        });
+    }
+
+    function openCity() {
+        api.openWin({
+            name: 'citySelect_win',
+            url: 'citySelect_win.html'
+        });
+    }
+
+    function openBuilding() {
+        api.openWin({
+            name: 'storiedBuilding_win',
+            url: 'storiedBuilding_win.html'
+        });
+    }
+</script>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>welcome</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/login/common.css" />
+    <script src='../../script/rem.js'></script>
+</head>
+
+<body>
+  <div class="header-nav" id="headerNav">
+      <img src="../../image/login/back.png" alt="" onclick="closeWin()">
+  </div>
+    <div class="wrapper">
+        <div class="page-name">
+            <p class="title">欢迎加入云社</p>
+            <p class="desc">为社区公共权益而生</p>
+        </div>
+        <div class="welcome-bg">
+            <img src="../../image/login/welcom-bg.png" alt="">
+        </div>
+        <div class="primary-btn con-btn mar86" onclick="openRegister()">
+            注 册
+        </div>
+        <div class="danger-btn con-btn" onclick="openLogin()">
+            登 录 账 户
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+    //打开注册页面
+    function openRegister() {
+        api.openWin({
+            name: 'register_frm',
+            url: 'register_frm.html'
+        });
+    }
+
+    //打开登录页面
+    function openLogin() {
+        api.openWin({
+            name: 'login_frm',
+            url: 'login_frm.html'
+        });
+    }
+
+    function closeWin() {
+        api.closeWin({});
+    }
+</script>
+
+</html>

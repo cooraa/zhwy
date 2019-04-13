@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>社区</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" href="../css/aui.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/community/community_frame.css">
+    <script scr='../script/rem.js'></script>
+</head>
+<body>
+  <div id='community_frame'>
+    <div class='ba_f'>
+    <div class='search'>
+        <p>
+          <i class="aui-iconfont aui-icon-search"></i>
+        </p>
+        <input type="search" placeholder="请输入搜索内容" id="search-input">
+    </div>
+    <div class='activity_box'>
+        <div class='neighbor'>
+          <p><img src="../image/community/neighbor.png" alt=""></p>
+          <h1>认识邻居</h1>
+        </div>
+        <p></p>
+        <div class='activity'>
+          <p><img src="../image/community/activity.png" alt=""></p>
+          <h1>最新活动</h1>
+        </div>
+    </div>
+    <div class='switchover'>
+      <div class="tabnav2">
+				<div v-on:click='select(1)' value="1" :class="sele==1?'select':''">本小区<span></span></div>
+				<div v-on:click='select(0)' value="0" :class="sele==0?'select':''">附近小区<span></span></div>
+			</div>
+    </div>
+    <div class='tally'>
+      <div class='tallylist'>
+        <div v-on:click='Fnpitch(1)' :class='pitch==1?"clpitch":""'>全部</div>
+        <div v-on:click='Fnpitch(2)' :class='pitch==2?"clpitch":""'>帖子</div>
+        <div v-on:click='Fnpitch(3)' :class='pitch==3?"clpitch":""'>活动</div>
+        <div v-on:click='Fnpitch(4)' :class='pitch==4?"clpitch":""'>易物</div>
+        <div v-on:click='Fnpitch(5)' :class='pitch==5?"clpitch":""'>邻帮</div>
+      </div>
+    </div>
+    </div>
+    <!-- 浮动按钮 -->
+    <div class='fbuttom' v-on:click='showbuttom(1)'>
+        <img src="../image/community/addbutton.png" alt="">
+    </div>
+    <!-- 遮罩层 -->
+    <div :class='backdrois==0?"backdrop_is backdrop":"backdrop" ' >
+        <div class='backdrop_list'>
+            <p><img src="../image/community/neigh.png" alt=""></p>
+            <p><img src="../image/community/barterx.png" alt=""></p>
+            <p><img src="../image/community/act.png" alt=""></p>
+            <p><img src="../image/community/invitationx.png" alt=""></p>
+            <h2  v-on:click='showbuttom(0)'><img src="../image/community/abrogate.png" alt=""></h2>
+        </div>
+    </div>
+    <div class='gaine'>
+      <!--  模板-->
+
+      <!-- 领帮 -->
+        <div class='messagelist' v-if='pitch==5||pitch==1'>
+          <img v-if='pitch<2' src="../image/community/activitya.png" alt="">
+          <div class='header_tite'>
+            <p><img src="../image/my/portrait.png" alt=""></p>
+            <div class='tite'>
+              <h1>背影大人</h1>
+              <h2><i class='aui-iconfont aui-icon-location'></i>上海市静安区预览小区3栋</h2>
+            </div>
+            <div class="is_but">
+                <button v-if='isattention==1' class='noattention' v-on:click='clickattention(0)' type="button" name="button">关注</button>
+                <button v-else class='attention' type="button" v-on:click='clickattention(1)' name="button">已关注</button>
+            </div>
+          </div>
+          <div class='text_content'>
+              刚买的自行车停在3栋楼下,昨天晚上下班的时候还在，今天晚回来的时候就不见了,难过。
+          </div>
+          <div class='middle_img'>
+            <img src="../image/my/portrait.png"  alt="">
+            <img src="../image/my/portrait.png" alt="">
+          </div>
+          <div class='base'>
+            <p>
+              03月26日 12:00
+            </p>
+            <div>
+              <span><i class='aui-iconfont aui-icon-laud'></i> 128</span>
+                &nbsp;  &nbsp;
+              <span><i class='aui-iconfont aui-icon-comment'></i> 208</span>
+            </div>
+          </div>
+        </div>
+        <!-- 易物 -->
+        <div class='messagelist' v-if='pitch==4||pitch==1'>
+          <img v-if='pitch<2' src="../image/community/barter.png" alt="">
+          <div class='header_tite'>
+            <p><img src="../image/my/portrait.png" alt=""></p>
+            <div class='tite'>
+              <h1>背影大人</h1>
+              <h2><i class='aui-iconfont aui-icon-location'></i>上海市静安区预览小区3栋</h2>
+            </div>
+            <div class="is_but">
+                <h2>￥<span>40</span></h2>
+                <p><span>15</span>分钟钱</p>
+            </div>
+          </div>
+          <div class='text_content'>
+              刚买的自行车停在3栋楼下,昨天晚上下班的时候还在，今天晚回来的时候就不见了,难过。
+          </div>
+          <div class='middle_img'>
+            <img src="../image/my/portrait.png"  alt="">
+            <img src="../image/my/portrait.png" alt="">
+          </div>
+          <div class='base'>
+            <p>
+              <span>全新</span>
+            </p>
+            <div>
+              <span><i class='aui-iconfont aui-icon-laud'></i> 128</span>
+                &nbsp;  &nbsp;
+              <span><i class='aui-iconfont aui-icon-comment'></i> 208</span>
+            </div>
+          </div>
+        </div>
+        <!-- 帖子 -->
+        <div class='messagelist' v-if='pitch==2||pitch==1'>
+          <img v-if='pitch<2' src="../image/community/invitation.png" alt="">
+          <div class='header_tite'>
+            <p><img src="../image/my/portrait.png" alt=""></p>
+            <div class='tite'>
+              <h1>背影大人</h1>
+              <h2><i class='aui-iconfont aui-icon-location'></i>上海市静安区预览小区3栋</h2>
+            </div>
+            <div class="is_but">
+
+            </div>
+          </div>
+          <div class='text_content'>
+              刚买的自行车停在3栋楼下,昨天晚上下班的时候还在，今天晚回来的时候就不见了,难过。
+          </div>
+          <div class='middle_img'>
+            <img src="../image/my/portrait.png"  alt="">
+            <img src="../image/my/portrait.png" alt="">
+          </div>
+          <div class='base'>
+            <p>
+              03月26日 12:00
+            </p>
+            <div>
+              <span><i class='aui-iconfont aui-icon-laud'></i> 128</span>
+                &nbsp;  &nbsp;
+              <span><i class='aui-iconfont aui-icon-comment'></i> 208</span>
+            </div>
+          </div>
+        </div>
+        <!-- 活动 -->
+        <div class='activity_list' v-if='pitch==3||pitch==1'>
+            <img v-if='pitch<2' src="../image/community/activitya.png" alt="">
+            <div class='character'>
+              <h1>给小区公共区域来一次完美的活动</h1>
+              <h2>参与人数：4000</h2>
+              <h3>活动地址：上海市嘉定区嘉定新城</h3>
+              <h4>截止时间：2019/03/28 18:00</h4>
+              <h5>￥<span>49.00</span></h5>
+            </div>
+            <p><img src="../image/my/portrait.png" alt=""></p>
+        </div>
+        <!-- 参与话题 -->
+        <div class='theme'>
+            <div>
+              <h4><span>#我的萌宠</span></h4>
+              <h1>晒晒你家的宠物名字</h1>
+            </div>
+            <div>
+              <p><img src="../image/my/portrait.png" alt=""><img src="../image/my/portrait.png" alt=""><img src="../image/my/portrait.png" alt=""></p>
+              <h2><span>80</span>人参与</h2>
+              <h3><span>参与话题</span></h3>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
+<script src="../script/vue.js"></script>
+<script>
+var community = new Vue({
+  el: '#community_frame',
+  data: {
+    sele:1,
+    pitch:1,
+    backdrois:0,
+    isattention:1,
+  },
+  methods:{
+      select(value){//tab切换
+        this.sele=value;
+      },
+      Fnpitch(value){//标签切换
+          this.pitch=value;
+      },
+      showbuttom(vaue){
+        this.backdrois=vaue
+      },
+      clickattention(id){//关注
+        this.isattention=id;
+      }
+  }
+})
+
+
+</script>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>填写咨询</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <link rel="stylesheet" href="../../../css/aui.css">
+    <link rel="stylesheet" href="../../../css/housekeeper/assistant.css">
+    <script src='../../../script/rem.js'></script>
+    <script src='../../../script/vue.js'></script>
+    <script src='../../../script/api.js'></script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+  <div id='assistant'>
+
+      <div class='matter'>
+        <h1>咨询描述</h1>
+        <div class='tite_matter'>
+            <textarea v-model='form.textarea'  placeholder="您有什么问题请在这里描述,我们将在24小时内为您解答..."></textarea>
+            <div class='imglist'>
+              <div><img src="../../../image/housekeeper/picture.png" alt=""><p><img src="../../../image/housekeeper/guan.png" alt=""></p></div>
+                <div><img src="../../../image/housekeeper/picture.png" alt=""></div>
+            </div>
+        </div>
+        <p><span>{{num}}</span>/500</p>
+      </div>
+
+      <div class='choose'>
+          <div>
+            <input class="aui-checkbox" type="checkbox" name="demo1" v-model='form.ischecked' checked="">
+          </div>
+          <h1 v-on:click='checkboxs'>勾选表示需要客服电话联系</h1>
+      </div>
+      <div class='buttonm'>
+        <button type="button" name="button">提交</button>
+      </div>
+      <div class='heat'>
+          全国服务热线：4008-900-905
+      </div>
+
+
+    </div>
+<script>
+var housekeeper=  new Vue({
+          el: "#assistant",
+          data: {
+            form:{
+              textarea:'',
+              ischeckbox:'',
+              ischecked:false,
+              day:1,
+              item:1,
+            },
+            num:0,
+            tabAaclass:1,
+          },
+          methods: {
+            timechover(vale){
+              this.form.item=vale
+            },
+
+            cktabAactive(value){//切换室内和公区
+              this.tabAaclass=value;
+            },
+            checkboxs(){//勾选需要看下客服
+              if(this.form.ischecked==false){
+                this.form.ischecked=true;
+              }else{
+                this.form.ischecked=false;
+              }
+            },
+          },
+          watch:{
+            'form.textarea':function(newVal){
+              if(newVal.length>500){
+                newVal= newVal.substring(0,500)
+              }
+              this.form.textarea=newVal;
+              this.num=newVal.length;
+            }
+          }
+        })
+</script>
+</body>
+</html>

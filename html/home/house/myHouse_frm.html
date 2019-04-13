@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的房屋</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <link rel="stylesheet" href="../../../css/home/house/myHouse.css">
+    <script type="text/javascript" src="../../../script/rem.js"></script>
+</head>
+
+<body>
+    <!-- 提示信息 -->
+    <div class="tips">
+        <p>添加一个房屋成为小区用户，身份通过后可获得相应的分值</p>
+        <span>X</span>
+    </div>
+    <!-- 暂无房屋 -->
+    <!-- <div class="no-house">
+        <img src="../../image/home/no-house.png" alt="">
+        <p>您当前还没有房屋哦，赶紧去添加吧…</p>
+        <div class="no-house-add">去添加</div>
+    </div> -->
+    <!-- 房屋列表 -->
+    <section class="house-list">
+        <div class="list-item" onclick="openHouseManage()">
+            <div class="item-con">
+                <p class="item-title">上海 新城金郡</p>
+                <p class="item-desc">0188弄018单元0702室</p>
+            </div>
+            <div class="item-icon">
+                <img src="../../../image/home/right.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="notice">
+            <div class="user-info">
+                <div class="user-avater">
+                    <img src="../../../image/home/b1.jpg" alt="">
+                    <span>王何丽</span>
+                </div>
+                <div class="notice-btn">去通知Ta</div>
+            </div>
+            <p>经过产权人审核成为住户，开启更多功能：找管家帮忙/和邻居沟通～</p>
+        </div>
+    </section>
+    <div class="footer-btn btn-opacity">
+        <div class="btn btn-transfer" onclick="openTransfer()">过户</div>
+        <div class="btn btn-lease" onclick="openHouseChange()">出租</div>
+        <div class="btn btn-sell" onclick="openHouseChange()">出售</div>
+    </div>
+</body>
+<script type="text/javascript" src="../../../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        api.parseTapmode();
+    };
+    //打开页面
+    function openHouseManage() {
+        api.openWin({
+            name: 'houseManage_win',
+            url: 'houseManage_win.html'
+        });
+    }
+    //打开页面
+    function openTransfer() {
+        api.openWin({
+            name: 'houseTransfer_win',
+            url: 'houseTransfer_win.html'
+        });
+    }
+    //打开页面
+    function openHouseChange() {
+        api.openWin({
+            name: 'houseChange_win',
+            url: 'houseChange_win.html'
+        });
+    }
+</script>
+
+</html>

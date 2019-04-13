@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>房屋变更</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/aui.css" />
+    <link rel="stylesheet" href="../../../css/home/house/home-comm.css">
+    <script type="text/javascript" src="../../../script/rem.js"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <section class="aui-content mt10">
+        <ul class="aui-list aui-list-in">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">联系人</div>
+                    <div class="aui-list-item-right">
+                        <input type="text" placeholder="请输入联系人名称" />
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">联系号码</div>
+                    <div class="aui-list-item-right">
+                        <input type="text" placeholder="请输入联系号码" />
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item address-info">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">称呼</div>
+                    <div class="aui-list-item-right"></div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">房屋信息</div>
+                    <div class="aui-list-item-right"></div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-title">期待价格</div>
+                    <div class="aui-list-item-right">
+                        <input type="text" placeholder="万元" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <div class="btn-box">
+        <div class="btn btn-gray">提交</div>
+        <p>信息提交后，会有工作人员进一步沟通确认</p>
+        <div class="btn btn-red">提交</div>
+    </div>
+</body>
+<script type="text/javascript" src="../../../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function() {}
+        //打开页面
+    function openCommunity() {
+        api.openWin({
+            name: 'communitySelect_win',
+            url: 'communitySelect_win.html'
+        });
+    }
+
+    function openCity() {
+        api.openWin({
+            name: 'citySelect_win',
+            url: 'citySelect_win.html'
+        });
+    }
+
+    function openBuilding() {
+        api.openWin({
+            name: 'storiedBuilding_win',
+            url: 'storiedBuilding_win.html'
+        });
+    }
+</script>
+
+</html>
