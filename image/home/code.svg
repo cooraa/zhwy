@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_扫一扫</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-14.000000, -30.000000)">
+            <g id="nav" transform="translate(0.000000, 20.000000)">
+                <g id="扫一扫" transform="translate(14.000000, 10.000000)">
+                    <rect id="矩形" fill="#333333" x="2" y="12" width="19" height="1.5" rx="0.75"></rect>
+                    <path d="M21,17.0301953 L21,20 C21,21.1045695 20.1045695,22 19,22 L16.0241676,22 M7.03783961,22 L4,22 C2.8954305,22 2,21.1045695 2,20 L2,16.9665568 M2,8.09488786 L2,5 C2,3.8954305 2.8954305,3 4,3 L7.04414859,3 M16.0392543,3 L19,3 C20.1045695,3 21,3.8954305 21,5 L21,8.04469028" id="形状" stroke="#333333" stroke-width="1.5" stroke-linecap="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
