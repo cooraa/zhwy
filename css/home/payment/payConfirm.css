@@ -1,0 +1,67 @@
+.aui-list-item-right {
+    font-size: 0.7rem !important;
+    color: #666 !important;
+}
+
+.aui-list-item-right>span {
+    padding-left: 0;
+}
+
+.model-head {
+    margin: 0;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.model-head>i {
+    margin-left: 0.5rem;
+    text-align: left;
+    font-size: 0.85rem;
+    color: #999;
+    float: left;
+}
+
+.model-head>span {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
+}
+
+#payConfirmModel, #selectPayStyle {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 22rem;
+}
+
+#payConfirmModel>.money {
+    font-size: 1.7rem;
+    text-align: center;
+    font-weight: 500;
+    height: 4rem;
+    line-height: 4rem;
+}
+
+#payConfirmModel>.pay-btn {
+    height: 2.45rem;
+    background: rgba(249, 58, 58, 1);
+    line-height: 2.45rem;
+    font-size: 0.8rem;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#selectPayStyle .aui-list-item-media {
+    width: 2rem;
+}
+
+#selectPayStyle .aui-list-item-media>img {
+    width: 1.2rem;
+    height: 1.2rem;
+}

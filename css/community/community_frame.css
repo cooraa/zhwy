@@ -1,0 +1,555 @@
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ba_f {
+    background: #fff;
+    border-top: 0.01rem solid #fff;
+}
+
+.search {
+    width: 90%;
+    height: 2.5rem;
+    position: relative;
+    margin: 0.5rem auto;
+    background: #F2F2F2;
+    display: flex;
+    border-radius: 2rem;
+}
+
+.search>p {
+    width: 10%;
+    height: 2.5rem;
+    text-align: center;
+    line-height: 2.5rem;
+    font-weight: 600;
+}
+.search>p .aui-icon-search{
+  font-size: 1rem;
+}
+.search #search-input {
+    width: 80%;
+    height: 2.5rem;
+    font-size:1rem;
+}
+
+.activity_box {
+    width: 90%;
+    height: 4rem;
+    display: flex;
+    margin: 2.5rem auto;
+    border-bottom: #f8f8f8 solid 0.01rem;
+    box-shadow: 0.2rem 0.25rem #f8f8f8;
+}
+
+.activity_box>p {
+    border: 0.1rem solid #f8f8f8;
+    height: 2.5rem;
+    margin-top: 0.75rem;
+}
+
+.activity_box>div {
+    width: 59%;
+    height: 4rem;
+    display: flex;
+    padding: 0 0 0 1rem;
+    box-sizing: border-box;
+}
+
+.activity_box>div>p {
+    width: 20%;
+    height: 4rem;
+    margin-right: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.activity_box>div>p>img {
+    width: 100%;
+}
+
+.activity_box>div>h1 {
+    font-size: 1.2rem;
+    font-weight:700;
+    height: 3.5rem;
+    line-height:3.5rem;
+}
+
+/*选项卡*/
+.switchover {
+    width: 80%;
+    margin: 0 auto;
+    height: 4rem;
+}
+.tabnav2 {
+    display: flex;
+    padding: 0.6rem 0.75rem;
+    background: #fff;
+    justify-content: space-around;
+    height: 4rem;
+}
+
+.tabnav2>div {
+    position: relative;
+    color: #333;
+    width: 50%;
+    height: 2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.tabnav2>div.select {
+    color: #F93A3A;
+    font-weight:700;
+}
+.tabnav2>div span {
+    display: none;
+    width: 2.5rem;
+    height: 0.2rem;
+    background: #F93A3A;
+    position: absolute;
+    left: 40%;
+    bottom: -0.5rem;
+}
+
+.tabnav2>div.select span {
+    display: inline-block;
+}
+
+/*选项卡*/
+
+
+.tally {
+    width:95%;
+    height:4.5rem;
+    padding: 0  1rem;
+    box-sizing: border-box;
+    margin: 1rem auto 0;
+    overflow-x: scroll;
+}
+.tallylist{
+  width:100%;
+  display: flex;
+  height:3rem;
+  justify-content:space-between;
+}
+.tallylist>div {
+  width:5rem;
+  height:2.5rem;
+  line-height:2.3rem;
+  text-align: center;
+  margin-right: 0.5rem;
+  border: 0.1rem solid #D6D6D6;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+}
+
+.tallylist>.clpitch {
+    color: #F93A3A;
+    background: #FEEEEE;
+    border: 0.1rem solid #FEEEEE;
+}
+
+.gaine {
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.messagelist {
+    width: 100%;
+    background: #fff;
+    box-shadow:0.2rem 0.25rem #f8f8f8;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding: 1rem 0.5rem 0.5rem;
+}
+
+.messagelist>img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:3.5rem;
+}
+
+.header_tite {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+}
+
+.header_tite>p {
+    width: 20%;
+    padding: 0.5rem 0 0 1rem;
+}
+
+.header_tite>p>img {
+    width: 2.5rem;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.header_tite>.tite {
+    width: 55%;
+    height: 4rem;
+}
+
+.header_tite>.tite>h1 {
+    font-size: 1.2rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: #333;
+    width: 100%;
+}
+
+.header_tite>.tite>h2 {
+    color: #999;
+    width: 100%;
+    font-weight: 400;
+    font-size: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.header_tite .is_but {
+    width: 25%;
+    height: 4rem;
+    padding-top: 0.5rem;
+}
+
+
+/*邻帮*/
+.aui-icon-location{
+font-size:0.9rem;
+}
+.header_tite .is_but .noattention {
+    width: 90%;
+    height: 2rem;
+    line-height:2rem;
+    background: #fff;
+    border: 0.1rem solid #F93A3A;
+    color: #F93A3A;
+    font-size: 1rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+
+.header_tite .is_but .attention {
+    color: #fff;
+    background: #F93A3A;
+    width: 90%;
+    height: 2rem;
+    line-height: 2rem;
+    font-size:1rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+
+.text_content {
+    width: 100%;
+    padding: 0 0.5rem;
+    color: #666666;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.middle_img {
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.middle_img>img {
+    width: 5rem;
+    height: 5rem;
+    margin-right: 0.5rem;
+}
+
+.messagelist .base {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+}
+
+.messagelist .base p {
+    color: #999;
+    height: 2rem;
+    line-height: 2rem;
+    width: 50%;
+    font-size: 1rem;
+}
+.messagelist .base i{
+  font-size: 1.2rem;
+}
+.messagelist .base>div {
+    height: 2rem;
+    line-height: 2rem;
+    color: #999;
+    width: 50%;
+    text-align: right;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+
+/*易物*/
+
+.header_tite .is_but h2 {
+    width: 100%;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #F10010;
+    text-align: center;
+}
+
+.header_tite .is_but p {
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.messagelist .base p span {
+    display: inline-block;
+    width: 5rem;
+    height: 2rem;
+    line-height:2rem;
+    margin: 0 1rem;
+    border-radius: 1.5rem;
+    background: #FEEEEE;
+    color: #F93A3A;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+
+/*帖子*/
+
+.activity_list {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0.2rem 0.25rem #f8f8f8;
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding: 1rem 0.5rem 1rem;
+    display: flex;
+}
+
+.activity_list>img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:3.5rem;
+}
+
+.activity_list .character {
+    width:70%;
+    padding-left: 1rem;
+}
+
+.activity_list .character h1 {
+    width: 100%;
+    height: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.activity_list .character h2, .activity_list .character h3, .activity_list .character h4 {
+    width: 100%;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1rem;
+    color: #999;
+}
+
+.activity_list .character h5 {
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    color: #F10010;
+    font-weight: 600;
+}
+
+.activity_list>p {
+    width: 30%;
+    padding: 0.5rem 0.5rem 0 1rem;
+    box-sizing: border-box;
+    height: 7rem;
+}
+
+.activity_list>p>img {
+    width: 6rem;
+    height: 6rem;
+}
+
+
+/*话题*/
+
+.theme {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0.2rem 0.25rem #f8f8f8;
+    margin-bottom: 0.5rem;
+    padding: 1rem 0.5rem 1rem;
+}
+
+.theme>div {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+}
+
+.theme>div>h4 {
+    width: 40%;
+    text-align: center;
+    height: 3rem;
+    box-sizing: border-box;
+    padding-top: 0.55rem;
+}
+
+.theme>div>h4>span {
+    display: inline-block;
+    width:7rem;
+    background: #FEEEEE;
+    color: #F93A3A;
+    border-radius: 1rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1rem;
+}
+
+.theme>div>h1 {
+    width: 60%;
+    height: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.theme>div>p {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 0 0 0.5rem;
+}
+
+.theme>div>p>img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.2rem;
+}
+
+.theme>div>h2 {
+    width: 50%;
+    height: 3rem;
+    margin-left: 0.5rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    color:#999;
+}
+
+.theme>div>h3 {
+    width: 30%;
+    height: 3rem;
+    font-size: 0.9rem;
+    line-height: 3rem;
+    padding-top: 0.25rem;
+}
+
+.theme>div>h3>span {
+    display: inline-block;
+    border-radius: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    background: #EEE;
+    color: #333;
+    width: 6rem;
+    text-align: center;
+}
+
+.fbuttom {
+    width: 4.5rem;
+    height:4.5rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    position: fixed;
+    top: 60%;
+    right: 1rem;
+    z-index: 2;
+}
+
+.fbuttom>img {
+    width:4.5rem;
+    height:4.5rem;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.backdrop_is {
+    display: none;
+}
+
+.backdrop_list {
+    position: absolute;
+    bottom: 3rem;
+    right: 1rem;
+    width:4.5rem;
+    height:23rem;
+}
+
+.backdrop_list>p {
+    width: 100%;
+    height: 4.5rem;
+}
+
+.backdrop_list>p>img {
+    width: 100%;
+    height: 4.5rem;
+}
+
+.backdrop_list>h2 {
+    width: 100%;
+    height: 4.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.backdrop_list>h2>img {
+    border-radius: 3rem;
+}

@@ -1,0 +1,222 @@
+body{
+  background: #F8F8F8;
+}
+.base{
+  width: 100%;
+  height: 1rem;
+  margin:2rem 0;
+  text-align: center;
+  color: #999999;
+  line-height: 1rem;
+}
+.loginBtn{
+  text-align: center;
+  border:solid #efefef 1px;
+  margin:20px;
+}
+.header_img{
+  width: 100%;
+  height:10rem;
+  padding:2rem 0;
+  box-sizing: border-box;
+
+}
+.header_img>p{
+  width:6rem;
+  height:6rem;
+  margin:0 auto;
+  overflow: hidden;
+  padding: 0.25rem;
+  box-sizing: border-box;
+  border-radius: 6rem;
+  background:#fff;
+}
+.header_img>p>img{
+  width: 100%;
+  height: 100%;
+  border-radius:6rem;
+}
+.username{
+  text-align: center;
+  width: 100%;
+  height: 2rem;
+  padding:0 0.5rem 0 10%;
+  box-sizing: border-box;
+  height:2rem;
+  line-height:2rem;
+  font-size:1.3rem;
+  font-weight: 600;
+}
+.username span{
+  display: inline-block;
+  width:4rem;
+  background: url(../../image/my/vip.png);
+  background-size:100% 100%;
+  padding:0.25rem 0 0 2rem;
+  box-sizing: border-box;
+  height:1.5rem;
+  line-height:1.5rem;
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  color: #fff;
+}
+.site{
+  width: 80%;
+  height: 2rem;
+  line-height: 2rem;
+  margin:0 auto;
+  text-align: center;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  box-sizing: border-box;
+  font-size: 0.7rem;
+  color:#999;
+}
+.attention_box{
+  width:90%;
+  margin:1rem auto 0.5rem;
+  height: 4rem;
+  display: flex;
+  background: #fff;
+  border-radius:0.3rem;
+}
+.attention_box>div{
+  width: 33.33%;
+  height: 4rem;
+}
+.attention_box>div>h1{
+  height: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  width: 100%;
+}
+.attention_box>div>p{
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+}
+.modules{
+  width: 90%;
+  height: 4rem;
+  margin:1rem auto;
+  display: flex;
+  justify-content:space-around;
+}
+.modules>div{
+  width: 20%;
+  height: 4rem;
+}
+.modules>div>p{
+  width: 100%;
+  height: 3rem;
+  padding:0.6rem;
+  box-sizing: border-box;
+}
+.modules>div>p>img{
+  width:100%;
+  height:100%;
+}
+.modules>div>h1{
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #333333;
+}
+.My_message{
+  width: 100%;
+  padding:0 1rem;
+  overflow: auto;
+  box-sizing: border-box;
+  height:8rem;
+}
+.message_list{
+  display: flex;
+  width: 26rem;
+  height: 7rem;
+  box-sizing: border-box;
+}
+.message_list>div{
+  width:5rem;
+  margin-right: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+
+}
+.message_list>div:nth-child(1){
+  background: #F39D9B;
+}
+.message_list>div:nth-child(2){
+  background: #F7B296;
+}
+.message_list>div:nth-child(3){
+  background: #FDCF8A;
+}
+.message_list>div:nth-child(4){
+  background: #9BAFD5;
+}
+.message_list>div>h1{
+  font-size: 0.7rem;
+  color: #fff;
+  font-weight: 600;
+  height: 2rem;
+  line-height: 2rem;
+  width: 100%;
+}
+.message_list>div>h2{
+  width: 100%;
+  height:2.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+}
+.message_list>div>h2>span{
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.message_list>div>p{
+  width:100%;
+  height: 2rem;
+}
+.message_list>div>p>img{
+  width:1.5rem;
+  height: 1.5rem;
+  border-radius:1rem;
+  background:rgba(249,206,205);
+}
+.gaine{
+  width: 100%;
+  padding:0.5rem 0 1rem 0;
+}
+.gaine_list{
+  width: 100%;
+  padding:0 1rem;
+  background: #fff;
+  border-bottom:0.01rem solid #f8f8f8;
+
+  height: 3rem;
+  display: flex;
+}
+.gaine_list>h1{
+  width: 70%;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+.gaine_list>p{
+  width: 30%;
+  height: 3rem;
+  padding: 1rem 0.5rem 0 0;
+}
+.gaine_list>p>img{
+  width: 0.5rem;
+  float: right;
+}

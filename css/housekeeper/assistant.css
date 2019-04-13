@@ -1,0 +1,294 @@
+.aui-bar-nav.aui-bar-light .aui-iconfont{
+  color: #333;
+}
+.aui-bar-light, .aui-bar-nav.aui-bar-light .aui-iconfont{
+    color: #333;
+}
+.tab-nav {
+    margin:0 auto;
+    text-align: center;
+    display: flex;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height:2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .tab-item{
+    width: 50%;
+    height: 2.5rem;
+    flex: 1;
+    color: #333333;
+    font-size:1rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+  }
+  .tabAactive::before {
+    content: "";
+    width: 1.8rem;
+    border-bottom: solid #F93A3A 0.1rem;
+    position: absolute;
+    top: 2.35rem;
+    border-radius: 0.05rem;
+  }
+  .tabAactive{
+    color: #F93A3A;
+    font-weight:600;
+  }
+  .matter{
+    width: 100%;
+    background:#fff;
+    margin:0 auto;
+    padding:0.5rem  1rem;
+    position: relative;
+
+  }
+  .matter>p{
+    position: absolute;
+    font-size: 0.85rem;
+    color: #999;
+    bottom: 1rem;
+    right:1.5rem;
+  }
+  .matter h1{
+    width: 100%;
+    height:2rem;
+    line-height: 2rem;
+    font-size:1rem;
+    font-weight:600;
+  }
+  .tite_matter{
+    width: 100%;
+    border:0.08rem solid #f8f8f8;
+    box-shadow:0.08rem 0.08rem 0.5rem #f8f8f8;
+    height: 13rem;
+  }
+  textarea {
+      height: 8rem;
+      width: 100%;
+      background-color: #ffffff;
+      padding:0.5rem;
+  }
+  .imglist{
+    width: 100%;
+    display: flex;
+    height: 4.5rem;
+  }
+  .imglist>div{
+    width:4rem;
+    height: 4rem;
+    margin-left: 0.5rem;
+    border:0.08rem solid #f8f8f8;
+    box-shadow:0.02rem 0.02rem 0.5rem #f8f8f8;
+    position: relative;
+  }
+  .imglist>div>p{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    right: -0.5rem;
+    top: -0.5rem;
+
+  }
+  .imglist>div>p>img{
+    width: 100%;
+    height: 100%;
+  }
+  .imglist>div:last-child{
+      padding: 0.75rem;
+  }
+  .imglist>div>img{
+    width: 100%;
+    height: 100%;
+  }
+  .elsetime{
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    background: #fff;
+    margin:0.5rem 0;
+    padding:0 0.5rem;
+    box-sizing: border-box;
+  }
+  .elsetime>h1{
+    width: 40%;
+    font-size: 0.9rem;
+    font-weight: 600;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    color: #333;
+  }
+  .elsetime>div{
+    width: 50%;
+    text-align: right;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    color: #999999;
+  }
+  .elsetime>p{
+    width: 10%;
+    padding:0.85rem 0 0 0.85rem;
+  }
+  .elsetime>p>img{
+    width:0.45rem;
+  }
+  .choose{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    padding:0  1rem;
+    margin-top: 0.5rem;
+  }
+  .choose>div{
+    width: 1.3rem;
+    height: 2rem;
+    padding: 0.5rem 0 0 0;
+  }
+  .choose>div>input{
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+  }
+  .choose>h1{
+    width: 90%;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #424242;
+  }
+  .buttonm{
+    width: 90%;
+    height: 2.5rem;
+    margin:1rem auto;
+  }
+  .buttonm>button{
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: 600;
+    background: #F93A3A;
+    border-radius: 1.5rem;
+    outline: none;
+    border:none;
+  }
+  .heat{
+    width: 100%;
+    height: 2rem;
+    line-height:2rem;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-align: center;
+    margin:2rem 0 0 0;
+    color: #666666;
+  }
+  .shcometime{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+    background-color: rgba(0,0,0,.3);
+  }
+  .shcometime>p{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.0);
+  }
+  .cometime{
+    width: 100%;
+    height: 15rem;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    z-index: 900;
+    left: 0;
+  }
+  .cometime>h1{
+    width: 100%;
+    height: 2.5rem;
+    font-size:1rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 2.5rem;
+    border-bottom:0.01rem solid #f8f8f8;
+  }
+  .cometime>div{
+    width: 100%;
+    display: flex;
+
+  }
+  .daylist{
+    width:30%;
+    height:12.5rem;
+    background: #F8F8F8;
+
+  }
+  .daylist>div{
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    font-weight: 500;
+    width: 100%;
+    font-size: 0.95rem;
+    color: #666;
+    border-bottom:0.01rem solid #EAEAEA;
+  }
+  .daylist .setday{
+    background:#fff;
+    border: none;
+    color: #333;
+  }
+
+  .timelist{
+    width: 70%;
+    height: 12.5rem;
+    background: #fff;
+  }
+  .timelist>div{
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    line-height: 2.5rem;
+  }
+  .timelist .settime{
+    color:#F93A3A;
+  }
+  .timelist>div>h1{
+    line-height: 2.5rem;
+    width: 80%;
+    height: 2.5rem;
+    font-size: 0.75rem;
+    padding-left: 0.5rem;
+    font-weight: 400;
+    box-sizing: border-box;
+  }
+  .timelist>div>p{
+    width: 20%;
+    height: 2.5rem;
+    padding-top:0.75rem;
+  }
+  .timelist>div>p>input{
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+  }
+  .timelist>div>p>input.aui-checkbox:checked{
+    background: #F93A3A;
+    border: solid 0.05rem #F93A3A;
+  }

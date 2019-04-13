@@ -1,0 +1,29 @@
+.upload-certificates {
+    margin: 0.8rem;
+}
+
+.certificates-title {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.1rem;
+}
+
+.certificates-box {
+    height: 10.7rem;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 0.2rem;
+    border: 0.1rem dashed rgba(224, 224, 224, 1);
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.certificates-box>img.camera {
+    height: 2.5rem;
+    width: 2.9rem;
+    margin: 3rem auto 1rem;
+}
+
+.certificates-box>p {
+    font-size: 0.8rem;
+    color: #666;
+}

@@ -1,0 +1,119 @@
+html, body {
+    background: rgba(248, 248, 248, 1);
+}
+
+.house-item {
+    margin: 0.5rem 0.8rem;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0.01rem 0.03rem 0px rgba(229, 229, 229, 0.6);
+    border-radius: 0.01rem;
+    padding: 0.75rem 0 0 0.75rem;
+}
+
+.house-title {
+    display: flex;
+}
+
+.house-desc {
+    font-size: 0.6rem;
+    color: #999;
+    line-height: 1.6rem;
+}
+
+.house-name {
+    margin: 0;
+    flex: 2;
+}
+
+.community-name {
+    font-size: 0.8rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.authen {
+    width: 4rem;
+    height: 1.2rem;
+    border-radius: 0.75rem;
+    line-height: 1.2rem;
+    text-align: center;
+    font-size: 0.6rem;
+    margin-right: 0.5rem;
+}
+
+
+/*已认证*/
+
+.authen-a {
+    border: solid #6182FA 0.05rem;
+    color: #6182FA;
+}
+
+
+/*未认证*/
+
+.authen-b {
+    border: solid #61BFFA 0.05rem;
+    color: #61BFFA;
+}
+
+
+/*待审核*/
+
+.authen-c {
+    border: solid #FAA961 0.05rem;
+    color: #FAA961;
+}
+
+
+/*已拒绝*/
+
+.authen-d {
+    border: solid #FA6161 0.05rem;
+    color: #FA6161;
+}
+
+.house-f {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 0.5rem 0.75rem 0.5rem 0;
+}
+
+.aui-radio:checked, .aui-radio.aui-checked, .aui-checkbox:checked, .aui-checkbox.aui-checked {
+    background-color: #F93A3A;
+    border: solid 0.05rem #F93A3A;
+}
+
+.aui-radio {
+    margin-right: 0.25rem;
+}
+
+.aui-list-item-inner>label, .control-btn {
+    font-size: 0.7rem;
+    color: #666;
+}
+
+.aui-radio, .aui-checkbox {
+    width: 1rem;
+    height: 1rem;
+}
+
+.add-house {
+    margin: 1rem 0.8rem;
+    height: 2.2rem;
+    border-radius: 1.1rem;
+    border: 0.05rem solid rgba(249, 58, 58, 1);
+    line-height: 2.2rem;
+    font-size: 0.8rem;
+    color: #F93A3A;
+    text-align: center;
+}

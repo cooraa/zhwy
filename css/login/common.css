@@ -1,0 +1,193 @@
+body {
+    background-color: #fff;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    object-fit: contain;
+}
+
+.header-nav {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    min-height: 2.25rem;
+    display: table;
+    line-height: 2.25rem;
+    background-color: #ffffff;
+    color: #ffffff;
+    padding-top: 1.5rem;
+}
+
+.header-nav>img {
+    width: 1rem;
+    height: 0.6rem;
+    margin-left: 1.5rem;
+}
+
+.page-name {
+    margin: 0.75rem  1.5rem 0;
+}
+
+.page-name>p.title {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    line-height: 1.4rem;
+}
+
+.page-name>p.desc {
+    font-size: 0.6rem;
+    color: #999;
+    line-height: 1.4rem;
+    letter-spacing: 0.1rem;
+}
+
+.welcome-bg {
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.primary-btn {
+    background: rgba(249, 58, 58, 1);
+    color: #fff;
+    margin: 0 auto;
+    font-size: 0.7rem;
+}
+
+.mar40 {
+    margin-top: 2rem;
+    margin-bottom: 1.15rem;
+}
+
+.mar86 {
+    margin: 2.5rem auto 0.8rem;
+}
+
+.danger-btn {
+    background: rgba(255, 255, 255, 1);
+    border:0.05rem  solid rgba(229, 229, 229, 1);
+    margin: 0 auto;
+    color: #333;
+    font-size: 0.7rem;
+}
+
+.con-btn {
+    width: 15.8rem;
+    height: 2.3rem;
+    text-align: center;
+    line-height: 2.3rem;
+    border-radius: 0.3rem;
+    font-weight: 500;
+}
+
+.com-form {
+    margin: 2rem 1.5rem 0;
+}
+
+.input-item {
+    margin: 0 auto 1rem;
+    border-bottom: solid #E5E5E5 1px;
+    line-height: 1.6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.input-item>input {
+    font-size: 0.6rem;
+    outline: none;
+    border: none;
+    width: 84%;
+}
+
+.com-form>a {
+    font-size: 0.6rem;
+    text-align: right;
+    display: block;
+}
+
+.red-txt {
+    color: #F93A3A;
+}
+
+.tips {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tips>span {
+    font-size: 0.6rem;
+    color: #3E4A59;
+}
+
+.tips>a {
+    font-size: 0.6rem;
+}
+
+.wx-login {
+    text-align: center;
+    margin-top: 6.25rem;
+}
+
+.wx-login>img {
+    width: 2.05rem;
+    height: 2.05rem;
+}
+
+.wx-login>p {
+    font-size: 0.6rem;
+    color: #333;
+}
+
+.box-shadow {
+    -webkit-box-shadow: #d4adad 0 0.5rem 2.5rem,#e2dcdc 0 -0.25rem 1.5rem;
+    -moz-box-shadow:#d4adad 0 0.5rem 2.5rem,#e2dcdc 0 -0.25rem 1.5rem;
+    box-shadow: #d4adad 0 0.5rem 2.5rem,#e2dcdc 0 -0.25rem 1.5rem;
+}
+
+.code {
+    font-size: 0.6rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #999;
+}
+
+.input-icon {
+    width: 0.8rem;
+    height: 0.8rem;
+    display: inline-block;
+    float: right;
+    margin-top: 0.5rem;
+}
+
+.success-b {
+    border-bottom: solid #30DA51 0.1rem;
+}
+
+.success-status {
+    background: url(../../image/login/dui.png) no-repeat;
+    background-size: contain;
+}
+
+.error-b {
+    border-bottom: solid #F93A3A 0.1rem;
+}
+
+.error-status {
+    background: url(../../image/login/error.png) no-repeat;
+    background-size: contain;
+}
+
+.see-password {
+    background: url(../../image/login/see-password.png) no-repeat;
+    background-size: contain;
+    margin-left: 0.35rem;
+    margin-top: 0.6rem;
+}

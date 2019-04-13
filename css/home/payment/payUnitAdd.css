@@ -1,0 +1,16 @@
+.agreement-check{
+  margin:20px 16px;
+}
+.agreement-check>.txt{
+  font-size:14px;
+  color:#424242;
+  display: inline-block;
+}
+.agreement-check>.txt>span{
+  color:#F93A3A;
+  font-weight: 400;
+}
+.agreement-check>input{
+  width:0.85rem;
+  height: 0.85rem;
+}

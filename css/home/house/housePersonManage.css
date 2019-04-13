@@ -1,0 +1,115 @@
+html, body {
+   background: rgba(248, 248, 248, 1);
+}
+
+.person-list {
+   margin: 0;
+}
+
+.person-item {
+   height: 5.1rem;
+   background: rgba(255, 255, 255, 1);
+   box-shadow: 0px 0.1rem 0.3rem 0px rgba(229, 229, 229, 0.6);
+   border-radius: 0.1rem;
+   margin: 0.5rem 0.8rem;
+}
+
+.person-attr {
+   height: 2rem;
+   border-bottom: solid #f5f5f5 0.05rem;
+   overflow: hidden;
+}
+
+.person-attr>span {
+   font-size: 0.7rem;
+   color: #666;
+   margin-left: 0.8rem;
+   line-height: 2rem;
+}
+
+.person-attr>.delete {
+   float: right;
+   margin-right: 0.8rem;
+}
+
+.person-attr>.delete>i { 
+   vertical-align: -0.6rem;
+   font-size: 0.8rem;
+   color: #666;
+}
+
+.person-info {
+   display: flex;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: flex;
+   -webkit-box-pack: justify;
+   -webkit-justify-content: space-between;
+   justify-content: space-between;
+   -webkit-box-align: center;
+   -webkit-align-items: center;
+   align-items: center;
+}
+
+.person-avater {
+   flex: 2;
+}
+
+.person-avater>img {
+   width: 2rem;
+   display: inline-block;
+   border-radius: 50%;
+   height: 2rem;
+   margin: 0.5rem 0.25rem 0.5rem 1rem;
+}
+
+.person-avater>span {
+   font-size: 0.8rem;
+   color: #333;
+   display: inline-block;
+   vertical-align: 1.1rem;
+}
+
+.right-icon {
+   margin-right: 0.8rem;
+}
+
+.right-icon>span {
+   font-size: 0.7rem;
+}
+
+.right-icon>img {
+   width: 0.8rem;
+   display: inline-block;
+   vertical-align: -0.15rem;
+}
+
+
+/*Ã¥Â·Â²Ã¨Â®Â¤Ã¨Â¯Â*/
+
+.authen-a {
+   color: #6182FA;
+}
+
+
+/*Ã¦Å“ÂªÃ¨Â®Â¤Ã¨Â¯Â*/
+
+.authen-b {
+   color: #61BFFA;
+}
+
+
+/*Ã¥Â¾â€¦Ã¥Â®Â¡Ã¦Â Â¸*/
+
+.authen-c {
+   color: #FAA961;
+}
+
+
+/*Ã¥Â·Â²Ã¦â€¹â€™Ã§Â»Â*/
+
+.authen-d {
+   color: #FA6161;
+}

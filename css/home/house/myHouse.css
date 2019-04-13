@@ -1,0 +1,183 @@
+html, body {
+    background: rgba(248, 248, 248, 1);
+}
+
+.tips {
+    height: 1.8rem;
+    background: rgba(255, 243, 223, 1);
+    position: relative;
+    text-align: center;
+    line-height: 1.8rem;
+}
+
+.tips>p {
+    color: #DE9D55;
+    font-size: 0.6rem;
+    display: inline-block;
+}
+
+.tips>span {
+    color: #DE9D55;
+    margin-left: 0.5rem;
+}
+
+
+/*no-house*/
+
+.no-house {
+    margin: 6.4rem auto 1rem;
+    text-align: center;
+}
+
+.no-house>img {
+    width: 10.35rem;
+    height: 8.65rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.no-house>p {
+    color: #666;
+    font-size: 0.7rem;
+    margin: 1rem auto;
+}
+
+.no-house .no-house-add {
+    width: 6.5rem;
+    height: 2.2rem;
+    background: rgba(249, 58, 58, 1);
+    border-radius: 1.1rem;
+    line-height: 2.2rem;
+    font-size: 0.8rem;
+    color: #fff;
+    margin: 0 auto;
+}
+
+
+/*house-list*/
+
+.house-list>.list-item {
+    height: 3.9rem;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0.1rem 0.3rem 0px rgba(229, 229, 229, 0.6);
+    border-radius: 0.1rem;
+    margin: 0.5rem 0.8rem;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.item-con {
+    margin: 0;
+    flex: 2;
+}
+
+.item-title {
+    font-size: 0.8rem;
+    color: #333;
+    font-weight: 600;
+    padding: 0.75rem 0 0.25rem 1rem;
+}
+
+.item-desc {
+    font-size: 0.6rem;
+    color: #999;
+    padding-left: 1rem;
+}
+
+.item-icon>img {
+    width: 1rem;
+    height: 1rem;
+    vertical-align: -1.45rem;
+    display: inline-block;
+    margin-right: 0.8rem;
+}
+
+
+/*notice*/
+
+.notice {
+    height: 6rem;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0.1rem 0.3rem 0px rgba(229, 229, 229, 0.6);
+    border-radius: 2px;
+    margin: 0.5rem 0.8rem;
+}
+
+.notice>p {
+    font-size: 0.6rem;
+    color: #999;
+    margin: 0 1rem;
+    line-height: 1rem;
+}
+
+.user-info {
+    margin: 0;
+    display: flex;
+}
+
+.user-avater {
+    flex: 1;
+}
+
+.user-avater>img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0.85rem 0.25rem 0.5rem 1rem;
+}
+
+.user-avater>span {
+    font-size: 0.8rem;
+    color: #333;
+    display: inline-block;
+    position: relative;
+    top: -1.2rem;
+    font-weight: 600;
+}
+
+.notice-btn {
+    font-size: 0.6rem;
+    width: 5rem;
+    height: 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 195, 156, 1) 0%, rgba(251, 110, 53, 1) 100%);
+    border-radius: 5rem;
+    text-align: center;
+    color: #fff;
+    line-height: 1.5rem;
+    margin: 1rem 1rem 0 0;
+}
+
+
+/*footer-btn*/
+
+.btn-opacity {
+    opacity: 0.2;
+}
+
+.footer-btn {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    height: 2.45rem;
+    width: 100%;
+}
+
+.footer-btn>.btn {
+    flex: 1;
+    color: #fff;
+    line-height: 2.45rem;
+    text-align: center;
+}
+
+.footer-btn>.btn-transfer {
+    background: rgba(97, 130, 250, 1);
+}
+
+.footer-btn>.btn-lease {
+    background: rgba(250, 169, 97, 1);
+}
+
+.footer-btn>.btn-sell {
+    background: rgba(250, 97, 97, 1);
+}
